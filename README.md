@@ -1,2 +1,0 @@
-# elitestyle.by
-elitestyle.by
