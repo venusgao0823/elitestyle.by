@@ -802,7 +802,9 @@
             </a>
             <div class="contact-info">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Я́нки Купа́лы 25</span>
+                <a href="https://yandex.by/maps/?text=Янки Купалы 25, Минск" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                    Я́нки Купа́лы 25
+                </a>
             </div>
         </div>
         <div style="margin-top: 24px; font-size: 0.85rem; color:#6B625C;" data-key="worktime">Ежедневно: 11:00 – 23:00, комиссионный бутик премиум-класса</div>
@@ -812,9 +814,9 @@
         <div class="container" style="padding: 0 24px;">
             <div class="footer-content">
                 <div class="footer-col">
-                    <h4>Элитный стиль</h4>
+                    <h4 data-key="footer_brand">Элитный стиль</h4>
                     <p data-key="footer_desc">Скупка и комиссионная продажа</p>
-                    <p>Элитные зарубежные бренды</p>
+                    <p data-key="footer_subtitle">Элитные зарубежные бренды</p>
                     <div class="social-icons">
                         <a href="#" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="Telegram" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
@@ -838,8 +840,12 @@
                 <div class="footer-col">
                     <h4 data-key="footer_contacts">Контакты</h4>
                     <p><i class="fas fa-phone-alt"></i> <a class="footer-phone" href="tel:+375257811111">+375 (25) 781-11-11</a></p>
-                    <p><i class="fas fa-map-pin"></i> Я́нки Купа́лы 25</p>
-                    <p>Беларусь, Минск</p>
+                    <p><i class="fas fa-map-pin"></i> 
+                        <a href="https://yandex.by/maps/?text=Янки Купалы 25, Минск" target="_blank" rel="noopener noreferrer" style="color: #CBC2BA; text-decoration: none;">
+                            Я́нки Купа́лы 25
+                        </a>
+                    </p>
+                    <p data-key="footer_country">Беларусь, Минск</p>
                 </div>
             </div>
             <div class="copyright"><p data-key="copyright">© 2026 Элитный стиль — Премиум комиссионный бутик. Скидки 60–70% + подарок к заказу.</p></div>
@@ -863,9 +869,11 @@
                 <i class="fab fa-whatsapp"></i>
                 <span data-key="modal_wa">Написать в WhatsApp</span>
             </a>
-            <div class="modal-contact-item" style="cursor:default;">
+            <div class="modal-contact-item" style="cursor:pointer;">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Я́нки Купа́лы 25, Минск</span>
+                <a href="https://yandex.by/maps/?text=Янки Купалы 25, Минск" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                    Я́нки Купа́лы 25, Минск
+                </a>
             </div>
             <div class="modal-contact-item" style="cursor:default;">
                 <i class="fas fa-clock"></i>
@@ -910,14 +918,17 @@
             modal_title: "Связаться с нами", modal_desc: "Свяжитесь с нами для консультации или записи",
             modal_wa: "Написать в WhatsApp", modal_hours: "Ежедневно 11:00 – 23:00",
             overlay_contact: "Узнать цену",
-            copyright: "© 2026 Элитный стиль — Премиум комиссионный бутик. Скидки 60–70% + подарок к заказу."
+            copyright: "© 2026 Элитный стиль — Премиум комиссионный бутик. Скидки 60–70% + подарок к заказу.",
+            footer_brand: "Элитный стиль",
+            footer_subtitle: "Элитные зарубежные бренды",
+            footer_country: "Беларусь, Минск"
         },
         be: {
             nav_home: "Галоўная", nav_catalog: "Каталог", nav_about: "Пра нас", nav_contact: "Кантакты",
-            hero_title: "Элітныя замежныя брэнды <span class='hero-gold'>Скупка і камісійны прадаж</span>",
+            hero_title: "Элітныя замежныя брэнды <span class='hero-gold'>Скупка і камісійны продаж</span>",
             hero_sub: "Найноўшыя актуальныя мадэлі, класіка і вінтаж",
             hero_discount: "▪️ Уся прадукцыя са зніжкай 60–70% ▪️",
-            hero_desc: "Толькі арыгінал. Люксавыя сумкі, гадзіннікі, упрыгажэнні, прэміяльны алкаголь. Распрадаж у краме — максімальныя зніжкі на элітныя тавары.",
+            hero_desc: "Толькі арыгінал. Люксавыя сумкі, гадзіннікі, упрыгажэнні, прэміяльны алкаголь. Распродаж у краме — максімальныя зніжкі на элітныя тавары.",
             gift_text: "Пры замове падарунак: парфюм і памада вядомых брэндаў",
             hero_btn: "Глядзець калекцыю",
             catalog_title: "Іншыя эксклюзіўныя прадметы",
@@ -928,18 +939,21 @@
             feat4_title: "Падарунак да заказу", feat4_desc: "Парфюм + памада прэміум-брэндаў",
             story_title: "Эксклюзіўныя рэчы з гісторыяй і душой",
             story_p1: "Мы прымаем на камісію і выкупляем сумкі, гадзіннікі, упрыгажэнні класа люкс. Кожны прадмет праходзіць строгі кантроль сапраўднасці. Даруем другое жыццё калекцыйным мадэлям, вінтажу і навінкам сезону.",
-            story_p2: "Распрадаж у нашым буціку — ідэальны момант папоўніць калекцыю. Пры замове любога тавара вы атрымліваеце раскошны падарунак (парфюм + памада вядомых дамоў).",
+            story_p2: "Распродаж у нашым буціку — ідэальны момант папоўніць калекцыю. Пры замове любога тавара вы атрымліваеце раскошны падарунак (парфюм + памада вядомых дамоў).",
             story_sig: "Элітны стыль — элітны перакрыжак стылю і разумных інвестыцый",
             promo_text: "🎁 Асартымент у наяўнасці: Сумкі LV, Hermès, залатыя і срэбныя ўпрыгажэнні, элітныя гадзіннікі, каштоўнасці, элітная гарэлка, прэміяльнае віно",
             contact_wa: "WhatsApp", worktime: "Штодзённа: 11:00 – 23:00, камісійны буцік прэміум-класа",
-            footer_desc: "Скупка і камісійны прадаж", footer_catalog: "Каталог",
+            footer_desc: "Скупка і камісійны продаж", footer_catalog: "Каталог",
             footer_bags: "Сумкі LV/Hermès", footer_watch: "Гадзіннікі & каштоўнасці", footer_alco: "Алкаголь прэміум", footer_vintage: "Вінтаж",
             footer_service: "Паслугі", footer_eval: "Ацэнка і выкуп", footer_comm: "Камісія", footer_delivery: "Дастаўка па РБ", footer_gift: "Падарункавыя наборы",
             footer_contacts: "Кантакты",
             modal_title: "Звязацца з намі", modal_desc: "Звяжыцеся з намі для кансультацыі",
             modal_wa: "Напісаць у WhatsApp", modal_hours: "Штодзённа 11:00 – 23:00",
             overlay_contact: "Даведацца цану",
-            copyright: "© 2026 Элітны стыль — Прэміум камісійны буцік. Зніжкі 60–70% + падарунак да заказу."
+            copyright: "© 2026 Элітны стыль — Прэміум камісійны буцік. Зніжкі 60–70% + падарунак да заказу.",
+            footer_brand: "Элітны стыль",
+            footer_subtitle: "Элітныя замежныя брэнды",
+            footer_country: "Беларусь, Мінск"
         },
         en: {
             nav_home: "Home", nav_catalog: "Catalog", nav_about: "About", nav_contact: "Contacts",
@@ -968,7 +982,10 @@
             modal_title: "Contact us", modal_desc: "Reach out for consultation or inquiry",
             modal_wa: "Message on WhatsApp", modal_hours: "Daily 11:00 – 23:00",
             overlay_contact: "Inquire",
-            copyright: "© 2026 Elite Style — Luxury consignment boutique. 60–70% off + free gift."
+            copyright: "© 2026 Elite Style — Luxury consignment boutique. 60–70% off + free gift.",
+            footer_brand: "Elite Style",
+            footer_subtitle: "Elite International Brands",
+            footer_country: "Belarus, Minsk"
         },
         zh: {
             nav_home: "首页", nav_catalog: "精品目录", nav_about: "品牌故事", nav_contact: "联系我们",
@@ -997,7 +1014,10 @@
             modal_title: "联系我们", modal_desc: "欢迎咨询或了解详情",
             modal_wa: "发送 WhatsApp 消息", modal_hours: "每日 11:00 – 23:00",
             overlay_contact: "询价",
-            copyright: "© 2026 精英风尚 — 奢华寄售精品店。60–70%折扣 + 下单赠礼。"
+            copyright: "© 2026 精英风尚 — 奢华寄售精品店。60–70%折扣 + 下单赠礼。",
+            footer_brand: "精英风尚",
+            footer_subtitle: "海外精英品牌",
+            footer_country: "白俄罗斯，明斯克"
         }
     };
 
@@ -1170,7 +1190,6 @@
             btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
         });
 
-        // Update overlay text in grid cards (they're already rendered)
         document.querySelectorAll('#remainingGrid [data-key="overlay_contact"]').forEach(el => {
             el.textContent = t.overlay_contact;
         });
