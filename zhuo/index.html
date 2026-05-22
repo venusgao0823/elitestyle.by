@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Элитный стиль | Премиум комиссионный бутик</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: url('images/beijing.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #2C2A29;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(253, 249, 245, 0.88);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        :root {
+            --gold: #B9995C;
+            --gold-dark: #9C7A42;
+            --gold-light: #E5D5B3;
+            --charcoal: #232120;
+            --white: #ffffff;
+            --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 25px 45px -12px rgba(0, 0, 0, 0.12);
+            --border-light: 1px solid rgba(185, 153, 92, 0.25);
+            --transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Language switcher */
+        .lang-switch {
+            display: flex;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            padding: 4px 10px;
+            border-radius: 100px;
+            border: 1px solid rgba(185, 153, 92, 0.4);
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: #3D3A38;
+            font-family: 'Inter', sans-serif;
+        }
+        .lang-btn.active {
+            background: var(--gold);
+            color: white;
+        }
+        .lang-btn:hover:not(.active) {
+            background: var(--gold-light);
+            color: #2C2A29;
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: var(--border-light);
+        }
+        .logo img {
+            height: 52px;
+            width: auto;
+            display: block;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.4rem;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #3D3A38;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        .right-group {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Hamburger menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            color: #3D3A38;
+            font-size: 1.4rem;
+            transition: color 0.2s;
+        }
+        .menu-toggle:hover { color: var(--gold); }
+
+        /* Hero */
+        .hero {
+            padding: 70px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+        .hero-glow {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            width: 80%;
+            height: 60%;
+            background: radial-gradient(ellipse at center, rgba(185,153,92,0.08) 0%, rgba(255,255,245,0) 70%);
+            transform: translateX(-50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 500;
+            color: #2C2A29;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        .hero-gold {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        .hero-sub {
+            font-size: 1.2rem;
+            color: #5C5855;
+            margin: 16px auto 12px;
+        }
+        .hero-discount {
+            background: #232120;
+            display: inline-block;
+            padding: 6px 24px;
+            border-radius: 60px;
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin: 15px 0 20px;
+        }
+        .hero-content p {
+            max-width: 620px;
+            margin: 20px auto 32px;
+            font-size: 1rem;
+            color: #5C5855;
+        }
+        .btn-primary {
+            background: transparent;
+            border: 1.5px solid var(--gold);
+            padding: 12px 34px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2C2A29;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background: var(--gold);
+            color: white;
+            transform: translateY(-2px);
+        }
+        .gift-badge {
+            margin-top: 28px;
+            font-size: 0.9rem;
+            background: rgba(185, 153, 92, 0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 28px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(185,153,92,0.2);
+        }
+
+        /* Carousel */
+        .carousel-section {
+            margin: 40px 0 40px;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: #1a1816;
+        }
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            flex: 0 0 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background-color: #F6F0E8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            padding: 0 12px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+            z-index: 2;
+        }
+        .carousel-btn:hover {
+            background: var(--gold);
+            color: #1E1C1A;
+        }
+        .carousel-prev { left: 20px; }
+        .carousel-next { right: 20px; }
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            z-index: 2;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,240,0.6);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .dot.active {
+            background: var(--gold);
+            width: 24px;
+            border-radius: 8px;
+        }
+
+        /* Product grid */
+        .section-header {
+            text-align: center;
+            margin: 48px 0 40px;
+        }
+        .section-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            font-weight: 500;
+            color: #2C2A29;
+        }
+        .section-header p {
+            color: #7F7A75;
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: 28px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #F0EBE4;
+            cursor: pointer;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(185,153,92,0.3);
+        }
+        .product-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            background-color: #F6F0E8;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.02);
+        }
+        .product-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(35,33,32,0.82) 0%, transparent 100%);
+            padding: 20px 18px 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        .product-overlay-text {
+            color: white;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .product-overlay-text i {
+            color: var(--gold-light);
+        }
+
+        /* Features */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 32px;
+            background: #FFFFFF;
+            border-radius: 48px;
+            padding: 48px 40px;
+            margin: 30px 0 60px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #F0EBE4;
+        }
+        .feature-item {
+            flex: 1;
+            text-align: center;
+            min-width: 170px;
+        }
+        .feature-item i {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .feature-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .feature-item p {
+            font-size: 0.85rem;
+            color: #6B625C;
+        }
+
+        /* Story section */
+        .story-section {
+            background: #F4EFE9;
+            border-radius: 48px;
+            padding: 56px 48px;
+            margin: 40px 0 60px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 48px;
+        }
+        .story-text { flex: 1.2; }
+        .story-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .story-text p {
+            color: #4A4540;
+            margin-bottom: 24px;
+        }
+        .story-signature {
+            font-style: italic;
+            border-left: 3px solid var(--gold);
+            padding-left: 18px;
+        }
+        .story-img {
+            flex: 0.9;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .story-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Gift promo */
+        .gift-promo {
+            background: white;
+            border-radius: 48px;
+            padding: 48px 36px;
+            margin: 30px 0 60px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(185,153,92,0.2);
+        }
+        .gift-promo i {
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+        .contact-info {
+            background: #F9F5EF;
+            border-radius: 60px;
+            padding: 12px 28px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        .contact-info:hover {
+            background: var(--gold-light);
+            color: #2C2A29;
+            transform: translateY(-2px);
+        }
+        .contact-info i { color: var(--gold); }
+
+        /* Footer */
+        footer {
+            background: #1E1C1A;
+            color: #DCD2CA;
+            padding: 56px 0 32px;
+            margin-top: 40px;
+            border-radius: 48px 48px 0 0;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 180px;
+        }
+        .footer-col h4 {
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+        .footer-col p, .footer-col a {
+            color: #CBC2BA;
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .footer-col a:hover { color: var(--gold); }
+        .footer-phone {
+            color: #CBC2BA;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline;
+        }
+        .footer-phone:hover { color: var(--gold); }
+        .social-icons {
+            display: flex;
+            gap: 18px;
+            margin-top: 12px;
+        }
+        .social-icons a {
+            color: #CBC2BA;
+            display: block;
+            margin-bottom: 0;
+            font-size: 1.3rem;
+            transition: color 0.2s;
+        }
+        .social-icons a:hover { color: var(--gold); }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(194, 161, 91, 0.2);
+            padding-top: 32px;
+            font-size: 0.8rem;
+        }
+
+        /* Contact modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(35, 33, 32, 0.6);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.open {
+            display: flex;
+        }
+        .modal-box {
+            background: #FFFDF9;
+            border-radius: 32px;
+            padding: 48px 40px 40px;
+            max-width: 460px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+            border: 1px solid rgba(185,153,92,0.2);
+            animation: modalIn 0.3s cubic-bezier(0.2,0,0,1);
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .modal-close {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: #9C9590;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+        .modal-close:hover { color: #2C2A29; }
+        .modal-icon {
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .modal-desc {
+            color: #6B625C;
+            font-size: 0.92rem;
+            margin-bottom: 24px;
+        }
+        .modal-contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .modal-contact-item {
+            background: #F4EFE9;
+            border-radius: 16px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: #2C2A29;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        .modal-contact-item:hover {
+            background: var(--gold-light);
+            border-color: rgba(185,153,92,0.3);
+            transform: translateX(4px);
+        }
+        .modal-contact-item i {
+            width: 20px;
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        /* Scroll to top */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 900;
+            box-shadow: 0 8px 24px rgba(185,153,92,0.4);
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .scroll-top-btn.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .scroll-top-btn:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .navbar { flex-wrap: nowrap; position: relative; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                position: absolute;
+                top: calc(100% + 12px);
+                left: 0;
+                right: 0;
+                background: rgba(255,253,249,0.97);
+                backdrop-filter: blur(12px);
+                border-radius: 20px;
+                padding: 16px 0;
+                box-shadow: var(--shadow-md);
+                border: 1px solid rgba(185,153,92,0.2);
+                z-index: 100;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a {
+                padding: 12px 24px;
+                border-radius: 0;
+                font-size: 1rem;
+            }
+            .nav-links a:hover { background: rgba(185,153,92,0.08); }
+            .menu-toggle { display: block; }
+            .right-group { gap: 0.8rem; }
+            .hero-content h2 { font-size: 2.2rem; }
+            .carousel-btn { width: 36px; height: 36px; font-size: 1.2rem; }
+            .story-section { padding: 36px 24px; }
+            .features { padding: 36px 24px; border-radius: 32px; }
+            .modal-box { padding: 40px 24px 32px; }
+            .scroll-top-btn { bottom: 20px; right: 20px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Элитный стиль">
+        </div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" data-key="nav_home">Главная</a>
+            <a href="#carousel" data-key="nav_catalog">Каталог</a>
+            <a href="#about" data-key="nav_about">О нас</a>
+            <a href="#contact" data-key="nav_contact">Контакты</a>
+        </nav>
+        <div class="right-group">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="be">BE</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">中文</button>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <section id="home">
+        <div class="hero">
+            <div class="hero-glow"></div>
+            <div class="hero-content">
+                <h2 data-key="hero_title">Элитные зарубежные бренды <span class="hero-gold">Скупка и комиссионная продажа</span></h2>
+                <div class="hero-sub" data-key="hero_sub">Новейшие актуальные модели, классика и винтаж</div>
+                <div class="hero-discount" data-key="hero_discount">▪️ Вся продукция со скидкой 60–70% ▪️</div>
+                <p data-key="hero_desc">Только оригинал. Люксовые сумки, часы, украшения, премиальный алкоголь. Распродажа в магазине — максимальные скидки на элитные товары.</p>
+                <div class="gift-badge">
+                    <i class="fas fa-gift"></i>
+                    <span data-key="gift_text">При заказе в подарок: парфюм и помада известных брендов</span>
+                </div>
+                <div style="margin-top: 32px;">
+                    <a href="#carousel" class="btn-primary" data-key="hero_btn">Смотреть коллекцию</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel: images 1–10 -->
+    <section id="carousel">
+        <div class="carousel-section">
+            <div class="carousel-container" id="carouselContainer">
+                <div class="carousel-slides" id="carouselSlides"></div>
+                <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous">&#8249;</button>
+                <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next">&#8250;</button>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product grid: images 11–62 -->
+    <div class="section-header">
+        <h3 data-key="catalog_title">Другие эксклюзивные предметы</h3>
+        <p data-key="catalog_sub">Полная коллекция</p>
+    </div>
+    <div class="product-grid" id="remainingGrid"></div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-certificate"></i><h4 data-key="feat1_title">100% оригинал</h4><p data-key="feat1_desc">Экспертиза и гарантия подлинности</p></div>
+        <div class="feature-item"><i class="fas fa-tags"></i><h4 data-key="feat2_title">Скидка 60–70%</h4><p data-key="feat2_desc">На все элитные товары в магазине</p></div>
+        <div class="feature-item"><i class="fas fa-hand-holding-heart"></i><h4 data-key="feat3_title">Комиссия & выкуп</h4><p data-key="feat3_desc">Принимаем ваши люксовые вещи на реализацию</p></div>
+        <div class="feature-item"><i class="fas fa-champagne-glasses"></i><h4 data-key="feat4_title">Подарок к заказу</h4><p data-key="feat4_desc">Парфюм + помада премиум-брендов</p></div>
+    </div>
+
+    <section id="about">
+        <div class="story-section">
+            <div class="story-text">
+                <h3 data-key="story_title">Эксклюзивные вещи с историей и душой</h3>
+                <p data-key="story_p1">Мы принимаем на комиссию и выкупаем сумки, часы, украшения класса люкс. Каждый предмет проходит строгий контроль подлинности. Дарим вторую жизнь коллекционным моделям, винтажу и новинкам сезона.</p>
+                <p data-key="story_p2">Распродажа в нашем бутике — идеальный момент пополнить коллекцию. При заказе любого товара вы получаете роскошный подарок (парфюм + помада известных домов).</p>
+                <div class="story-signature" data-key="story_sig">Элитный стиль — элитный перекресток стиля и разумных инвестиций</div>
+            </div>
+            <div class="story-img">
+                <img src="images/lvtu/1.png" alt="Luxury boutique">
+            </div>
+        </div>
+    </section>
+
+    <div class="gift-promo" id="contact-promo">
+        <i class="fas fa-gift"></i>
+        <p data-key="promo_text">🎁 Ассортимент в наличии: Сумки LV, Hermès, золотые и серебряные украшения, элитные часы, драгоценности, элитная водка, премиальное вино</p>
+        <div class="contact-row">
+            <a class="contact-info" href="tel:+375257811111">
+                <i class="fas fa-phone-alt"></i>
+                <span>+375 (25) 781-11-11</span>
+            </a>
+            <a class="contact-info" href="https://wa.me/375257811111" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i>
+                <span data-key="contact_wa">WhatsApp</span>
+            </a>
+            <div class="contact-info">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Я́нки Купа́лы 25</span>
+            </div>
+        </div>
+        <div style="margin-top: 24px; font-size: 0.85rem; color:#6B625C;" data-key="worktime">Ежедневно: 11:00 – 23:00, комиссионный бутик премиум-класса</div>
+    </div>
+
+    <footer id="contact">
+        <div class="container" style="padding: 0 24px;">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Элитный стиль</h4>
+                    <p data-key="footer_desc">Скупка и комиссионная продажа</p>
+                    <p>Элитные зарубежные бренды</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Telegram" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/375257811111" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-key="footer_catalog">Каталог</h4>
+                    <a href="#carousel" data-key="footer_bags">Сумки LV/Hermès</a>
+                    <a href="#carousel" data-key="footer_watch">Часы & Драгоценности</a>
+                    <a href="#carousel" data-key="footer_alco">Алкоголь премиум</a>
+                    <a href="#carousel" data-key="footer_vintage">Винтаж</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-key="footer_service">Услуги</h4>
+                    <a href="#about" data-key="footer_eval">Оценка и выкуп</a>
+                    <a href="#about" data-key="footer_comm">Комиссия</a>
+                    <a href="#contact" data-key="footer_delivery">Доставка по РБ</a>
+                    <a href="#contact" data-key="footer_gift">Подарочные наборы</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-key="footer_contacts">Контакты</h4>
+                    <p><i class="fas fa-phone-alt"></i> <a class="footer-phone" href="tel:+375257811111">+375 (25) 781-11-11</a></p>
+                    <p><i class="fas fa-map-pin"></i> Я́нки Купа́лы 25</p>
+                    <p>Беларусь, Минск</p>
+                </div>
+            </div>
+            <div class="copyright"><p data-key="copyright">© 2026 Элитный стиль — Премиум комиссионный бутик. Скидки 60–70% + подарок к заказу.</p></div>
+        </div>
+    </footer>
+</div>
+
+<!-- Contact modal -->
+<div id="contactModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+        <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+        <div class="modal-icon"><i class="fas fa-gem"></i></div>
+        <div class="modal-title" id="modalTitle" data-key="modal_title">Связаться с нами</div>
+        <div class="modal-desc" data-key="modal_desc">Свяжитесь с нами для консультации или записи</div>
+        <div class="modal-contacts">
+            <a class="modal-contact-item" href="tel:+375257811111">
+                <i class="fas fa-phone-alt"></i>
+                <span>+375 (25) 781-11-11</span>
+            </a>
+            <a class="modal-contact-item" href="https://wa.me/375257811111" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i>
+                <span data-key="modal_wa">Написать в WhatsApp</span>
+            </a>
+            <div class="modal-contact-item" style="cursor:default;">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Я́нки Купа́лы 25, Минск</span>
+            </div>
+            <div class="modal-contact-item" style="cursor:default;">
+                <i class="fas fa-clock"></i>
+                <span data-key="modal_hours">Ежедневно 11:00 – 23:00</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scroll to top button -->
+<button id="scrollToTop" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<script>
+    // -------- TRANSLATIONS --------
+    const translations = {
+        ru: {
+            nav_home: "Главная", nav_catalog: "Каталог", nav_about: "О нас", nav_contact: "Контакты",
+            hero_title: "Элитные зарубежные бренды <span class='hero-gold'>Скупка и комиссионная продажа</span>",
+            hero_sub: "Новейшие актуальные модели, классика и винтаж",
+            hero_discount: "▪️ Вся продукция со скидкой 60–70% ▪️",
+            hero_desc: "Только оригинал. Люксовые сумки, часы, украшения, премиальный алкоголь. Распродажа в магазине — максимальные скидки на элитные товары.",
+            gift_text: "При заказе в подарок: парфюм и помада известных брендов",
+            hero_btn: "Смотреть коллекцию",
+            catalog_title: "Другие эксклюзивные предметы",
+            catalog_sub: "Полная коллекция",
+            feat1_title: "100% оригинал", feat1_desc: "Экспертиза и гарантия подлинности",
+            feat2_title: "Скидка 60–70%", feat2_desc: "На все элитные товары в магазине",
+            feat3_title: "Комиссия & выкуп", feat3_desc: "Принимаем ваши люксовые вещи на реализацию",
+            feat4_title: "Подарок к заказу", feat4_desc: "Парфюм + помада премиум-брендов",
+            story_title: "Эксклюзивные вещи с историей и душой",
+            story_p1: "Мы принимаем на комиссию и выкупаем сумки, часы, украшения класса люкс. Каждый предмет проходит строгий контроль подлинности. Дарим вторую жизнь коллекционным моделям, винтажу и новинкам сезона.",
+            story_p2: "Распродажа в нашем бутике — идеальный момент пополнить коллекцию. При заказе любого товара вы получаете роскошный подарок (парфюм + помада известных домов).",
+            story_sig: "Элитный стиль — элитный перекресток стиля и разумных инвестиций",
+            promo_text: "🎁 Ассортимент в наличии: Сумки LV, Hermès, золотые и серебряные украшения, элитные часы, драгоценности, элитная водка, премиальное вино",
+            contact_wa: "WhatsApp", worktime: "Ежедневно: 11:00 – 23:00, комиссионный бутик премиум-класса",
+            footer_desc: "Скупка и комиссионная продажа", footer_catalog: "Каталог",
+            footer_bags: "Сумки LV/Hermès", footer_watch: "Часы & Драгоценности", footer_alco: "Алкоголь премиум", footer_vintage: "Винтаж",
+            footer_service: "Услуги", footer_eval: "Оценка и выкуп", footer_comm: "Комиссия", footer_delivery: "Доставка по РБ", footer_gift: "Подарочные наборы",
+            footer_contacts: "Контакты",
+            modal_title: "Связаться с нами", modal_desc: "Свяжитесь с нами для консультации или записи",
+            modal_wa: "Написать в WhatsApp", modal_hours: "Ежедневно 11:00 – 23:00",
+            overlay_contact: "Узнать цену",
+            copyright: "© 2026 Элитный стиль — Премиум комиссионный бутик. Скидки 60–70% + подарок к заказу."
+        },
+        be: {
+            nav_home: "Галоўная", nav_catalog: "Каталог", nav_about: "Пра нас", nav_contact: "Кантакты",
+            hero_title: "Элітныя замежныя брэнды <span class='hero-gold'>Скупка і камісійны прадаж</span>",
+            hero_sub: "Найноўшыя актуальныя мадэлі, класіка і вінтаж",
+            hero_discount: "▪️ Уся прадукцыя са зніжкай 60–70% ▪️",
+            hero_desc: "Толькі арыгінал. Люксавыя сумкі, гадзіннікі, упрыгажэнні, прэміяльны алкаголь. Распрадаж у краме — максімальныя зніжкі на элітныя тавары.",
+            gift_text: "Пры замове падарунак: парфюм і памада вядомых брэндаў",
+            hero_btn: "Глядзець калекцыю",
+            catalog_title: "Іншыя эксклюзіўныя прадметы",
+            catalog_sub: "Поўная калекцыя",
+            feat1_title: "100% арыгінал", feat1_desc: "Экспертыза і гарантыя сапраўднасці",
+            feat2_title: "Зніжка 60–70%", feat2_desc: "На ўсе элітныя тавары ў краме",
+            feat3_title: "Камісія & выкуп", feat3_desc: "Прымаем вашыя люксавыя рэчы на рэалізацыю",
+            feat4_title: "Падарунак да заказу", feat4_desc: "Парфюм + памада прэміум-брэндаў",
+            story_title: "Эксклюзіўныя рэчы з гісторыяй і душой",
+            story_p1: "Мы прымаем на камісію і выкупляем сумкі, гадзіннікі, упрыгажэнні класа люкс. Кожны прадмет праходзіць строгі кантроль сапраўднасці. Даруем другое жыццё калекцыйным мадэлям, вінтажу і навінкам сезону.",
+            story_p2: "Распрадаж у нашым буціку — ідэальны момант папоўніць калекцыю. Пры замове любога тавара вы атрымліваеце раскошны падарунак (парфюм + памада вядомых дамоў).",
+            story_sig: "Элітны стыль — элітны перакрыжак стылю і разумных інвестыцый",
+            promo_text: "🎁 Асартымент у наяўнасці: Сумкі LV, Hermès, залатыя і срэбныя ўпрыгажэнні, элітныя гадзіннікі, каштоўнасці, элітная гарэлка, прэміяльнае віно",
+            contact_wa: "WhatsApp", worktime: "Штодзённа: 11:00 – 23:00, камісійны буцік прэміум-класа",
+            footer_desc: "Скупка і камісійны прадаж", footer_catalog: "Каталог",
+            footer_bags: "Сумкі LV/Hermès", footer_watch: "Гадзіннікі & каштоўнасці", footer_alco: "Алкаголь прэміум", footer_vintage: "Вінтаж",
+            footer_service: "Паслугі", footer_eval: "Ацэнка і выкуп", footer_comm: "Камісія", footer_delivery: "Дастаўка па РБ", footer_gift: "Падарункавыя наборы",
+            footer_contacts: "Кантакты",
+            modal_title: "Звязацца з намі", modal_desc: "Звяжыцеся з намі для кансультацыі",
+            modal_wa: "Напісаць у WhatsApp", modal_hours: "Штодзённа 11:00 – 23:00",
+            overlay_contact: "Даведацца цану",
+            copyright: "© 2026 Элітны стыль — Прэміум камісійны буцік. Зніжкі 60–70% + падарунак да заказу."
+        },
+        en: {
+            nav_home: "Home", nav_catalog: "Catalog", nav_about: "About", nav_contact: "Contacts",
+            hero_title: "Elite International Brands <span class='hero-gold'>Buyout & Consignment</span>",
+            hero_sub: "Latest models, classics & vintage",
+            hero_discount: "▪️ Storewide sale: 60–70% off ▪️",
+            hero_desc: "100% authentic. Luxury bags, watches, jewelry, premium vodka & wine. Enjoy huge discounts on all elite items.",
+            gift_text: "Free gift with order: perfume & lipstick from renowned brands",
+            hero_btn: "View collection",
+            catalog_title: "Other exclusive pieces",
+            catalog_sub: "Full collection",
+            feat1_title: "100% authentic", feat1_desc: "Expert verification & authenticity guarantee",
+            feat2_title: "60–70% discount", feat2_desc: "On all luxury products in store",
+            feat3_title: "Consignment & buyout", feat3_desc: "We accept your luxury items for resale",
+            feat4_title: "Gift with purchase", feat4_desc: "Perfume + lipstick from top brands",
+            story_title: "Exclusive pieces with history & soul",
+            story_p1: "We accept luxury bags, watches, jewelry on consignment. Each piece passes strict authenticity control. Giving a second life to collectibles, vintage, and new season items.",
+            story_p2: "Our boutique sale is the perfect moment to enrich your collection. Any order includes a luxury gift (perfume + lipstick from famous houses).",
+            story_sig: "Elite Style — the premium crossroad of style and wise investment.",
+            promo_text: "🎁 In stock: LV, Hermès bags, gold & silver jewelry, luxury watches, premium vodka, fine wine",
+            contact_wa: "WhatsApp", worktime: "Daily: 11:00 – 23:00, premium consignment boutique",
+            footer_desc: "Buyout & consignment", footer_catalog: "Catalog",
+            footer_bags: "LV/Hermès bags", footer_watch: "Watches & Jewelry", footer_alco: "Premium alcohol", footer_vintage: "Vintage",
+            footer_service: "Services", footer_eval: "Appraisal & buyout", footer_comm: "Consignment", footer_delivery: "Delivery in Belarus", footer_gift: "Gift sets",
+            footer_contacts: "Contacts",
+            modal_title: "Contact us", modal_desc: "Reach out for consultation or inquiry",
+            modal_wa: "Message on WhatsApp", modal_hours: "Daily 11:00 – 23:00",
+            overlay_contact: "Inquire",
+            copyright: "© 2026 Elite Style — Luxury consignment boutique. 60–70% off + free gift."
+        },
+        zh: {
+            nav_home: "首页", nav_catalog: "精品目录", nav_about: "品牌故事", nav_contact: "联系我们",
+            hero_title: "海外精英品牌 <span class='hero-gold'>收购与寄售</span>",
+            hero_sub: "最新潮流款式、经典及复古藏品",
+            hero_discount: "▪️ 店内所有精英商品 60–70% 折扣 ▪️",
+            hero_desc: "100%正品保证。奢华包袋、腕表、珠宝、高端伏特加及名酒。店铺促销，尊享最大优惠。",
+            gift_text: "下单即赠：知名品牌香水 + 口红",
+            hero_btn: "探索系列",
+            catalog_title: "其他精选单品",
+            catalog_sub: "完整系列",
+            feat1_title: "100% 正品", feat1_desc: "权威鉴定，正品保障",
+            feat2_title: "60–70% 折扣", feat2_desc: "全店精英商品折扣",
+            feat3_title: "寄售 & 收购", feat3_desc: "接受您的奢华物品寄售",
+            feat4_title: "下单赠礼", feat4_desc: "名品香水+口红",
+            story_title: "独具灵魂的传世臻品",
+            story_p1: "我们接受寄售并收购奢华包袋、腕表、珠宝。每件物品均通过严格真品检验。赋予收藏级单品、复古及当季新款第二次生命。",
+            story_p2: "店内促销是丰富您收藏的绝佳时机。任意订单均附赠奢华礼品（知名品牌香水+口红）。",
+            story_sig: "精英风尚 —— 风格与睿智投资的交汇点。",
+            promo_text: "🎁 现货包括：路易威登、爱马仕包袋，金银珠宝，奢华腕表，高端伏特加，名庄葡萄酒",
+            contact_wa: "WhatsApp", worktime: "每日: 11:00 – 23:00，精英寄售精品店",
+            footer_desc: "收购与寄售", footer_catalog: "精品目录",
+            footer_bags: "LV/爱马仕包袋", footer_watch: "腕表与珠宝", footer_alco: "高端酒类", footer_vintage: "复古臻品",
+            footer_service: "服务", footer_eval: "评估与收购", footer_comm: "寄售服务", footer_delivery: "白俄罗斯境内配送", footer_gift: "礼品套装",
+            footer_contacts: "联系方式",
+            modal_title: "联系我们", modal_desc: "欢迎咨询或了解详情",
+            modal_wa: "发送 WhatsApp 消息", modal_hours: "每日 11:00 – 23:00",
+            overlay_contact: "询价",
+            copyright: "© 2026 精英风尚 — 奢华寄售精品店。60–70%折扣 + 下单赠礼。"
+        }
+    };
+
+    let currentLang = 'ru';
+
+    // -------- CAROUSEL --------
+    const carouselSlidesDiv = document.getElementById('carouselSlides');
+    const dotsDiv = document.getElementById('carouselDots');
+    const carouselContainer = document.getElementById('carouselContainer');
+    let currentIndex = 0;
+    let slideInterval;
+    const TOTAL_CAROUSEL = 10;
+
+    function buildCarousel() {
+        carouselSlidesDiv.innerHTML = '';
+        dotsDiv.innerHTML = '';
+        for (let i = 1; i <= TOTAL_CAROUSEL; i++) {
+            const slideDiv = document.createElement('div');
+            slideDiv.className = 'carousel-slide';
+            const img = document.createElement('img');
+            img.src = `images/lvtu/${i}.png`;
+            img.alt = `Luxury item ${i}`;
+            img.onerror = function() {
+                this.src = 'data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22800%22 height%3D%22450%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%231a1816%22%2F%3E%3C%2Fsvg%3E';
+            };
+            slideDiv.appendChild(img);
+            carouselSlidesDiv.appendChild(slideDiv);
+
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.addEventListener('click', () => goToSlide(i - 1));
+            dotsDiv.appendChild(dot);
+        }
+        updateDots();
+    }
+
+    function updateDots() {
+        document.querySelectorAll('.dot').forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = (index + TOTAL_CAROUSEL) % TOTAL_CAROUSEL;
+        carouselSlidesDiv.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+    }
+
+    function nextSlide() { goToSlide(currentIndex + 1); }
+    function prevSlide() { goToSlide(currentIndex - 1); }
+
+    function resetAutoSlide() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 3500);
+    }
+
+    // Pause on hover
+    carouselContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    carouselContainer.addEventListener('mouseleave', resetAutoSlide);
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    carouselContainer.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].clientX;
+        clearInterval(slideInterval);
+    }, { passive: true });
+    carouselContainer.addEventListener('touchend', e => {
+        const delta = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(delta) > 40) {
+            delta > 0 ? nextSlide() : prevSlide();
+        }
+        resetAutoSlide();
+    }, { passive: true });
+
+    // Recalculate on resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => goToSlide(currentIndex), 100);
+    });
+
+    document.getElementById('carouselPrev').addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+    document.getElementById('carouselNext').addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+
+    // -------- PRODUCT GRID (11–62) --------
+    function renderRemainingGrid() {
+        const grid = document.getElementById('remainingGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        for (let i = 11; i <= 62; i++) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+
+            const img = document.createElement('img');
+            img.className = 'product-img';
+            img.src = `images/lvtu/${i}.png`;
+            img.alt = `Luxury item ${i}`;
+            img.loading = 'lazy';
+            img.onerror = function() {
+                this.src = 'data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22400%22 height%3D%22340%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%23f4ede5%22%2F%3E%3C%2Fsvg%3E';
+            };
+
+            const overlay = document.createElement('div');
+            overlay.className = 'product-overlay';
+            overlay.innerHTML = '<span class="product-overlay-text"><i class="fas fa-phone-alt"></i><span data-key="overlay_contact">Узнать цену</span></span>';
+
+            card.appendChild(img);
+            card.appendChild(overlay);
+            card.addEventListener('click', openModal);
+            grid.appendChild(card);
+        }
+    }
+
+    // -------- CONTACT MODAL --------
+    const modal = document.getElementById('contactModal');
+
+    function openModal() {
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // -------- SCROLL TO TOP --------
+    const scrollBtn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+        scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // -------- MOBILE NAV --------
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        menuToggle.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+    });
+
+    // Close mobile nav on link click
+    navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.querySelector('i').className = 'fas fa-bars';
+        });
+    });
+
+    // -------- LANGUAGE SYSTEM --------
+    function updatePageLanguage() {
+        const t = translations[currentLang];
+        document.documentElement.lang = currentLang;
+
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (!t[key]) return;
+            if (key === 'hero_title') el.innerHTML = t[key];
+            else el.textContent = t[key];
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
+        });
+
+        // Update overlay text in grid cards (they're already rendered)
+        document.querySelectorAll('#remainingGrid [data-key="overlay_contact"]').forEach(el => {
+            el.textContent = t.overlay_contact;
+        });
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            if (lang === currentLang) return;
+            currentLang = lang;
+            updatePageLanguage();
+        });
+    });
+
+    // -------- SMOOTH NAVIGATION --------
+    document.querySelectorAll('.nav-links a, .btn-primary, .footer-col a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#') && href.length > 1) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // -------- INIT --------
+    buildCarousel();
+    renderRemainingGrid();
+    updatePageLanguage();
+    resetAutoSlide();
+</script>
+</body>
+</html>
