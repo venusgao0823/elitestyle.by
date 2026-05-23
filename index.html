@@ -7,12 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* 所有样式与之前完全相同，为了节省篇幅此处不再重复，实际使用中请确保包含完整样式 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
             background: url('images/beijing.jpg') no-repeat center center fixed;
@@ -33,7 +29,6 @@
             z-index: -1;
             pointer-events: none;
         }
-
         :root {
             --gold: #B9995C;
             --gold-dark: #9C7A42;
@@ -45,13 +40,7 @@
             --border-light: 1px solid rgba(185, 153, 92, 0.25);
             --transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
         }
-
-        .container {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
+        .container { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
         /* Language switcher */
         .lang-switch {
             display: flex;
@@ -74,15 +63,8 @@
             color: #3D3A38;
             font-family: 'Inter', sans-serif;
         }
-        .lang-btn.active {
-            background: var(--gold);
-            color: white;
-        }
-        .lang-btn:hover:not(.active) {
-            background: var(--gold-light);
-            color: #2C2A29;
-        }
-
+        .lang-btn.active { background: var(--gold); color: white; }
+        .lang-btn:hover:not(.active) { background: var(--gold-light); color: #2C2A29; }
         /* Navbar */
         .navbar {
             padding: 24px 0;
@@ -93,52 +75,15 @@
             gap: 20px;
             border-bottom: var(--border-light);
         }
-        .logo img {
-            height: 52px;
-            width: auto;
-            display: block;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
-        }
-        .nav-links {
-            display: flex;
-            gap: 2.4rem;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 500;
-            color: #3D3A38;
-            transition: color 0.2s;
-            font-size: 0.95rem;
-        }
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-        .right-group {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        /* Hamburger menu */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 6px;
-            color: #3D3A38;
-            font-size: 1.4rem;
-            transition: color 0.2s;
-        }
+        .logo img { height: 52px; width: auto; display: block; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05)); }
+        .nav-links { display: flex; gap: 2.4rem; flex-wrap: wrap; }
+        .nav-links a { text-decoration: none; font-weight: 500; color: #3D3A38; transition: color 0.2s; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--gold); }
+        .right-group { display: flex; align-items: center; gap: 1.5rem; }
+        .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; color: #3D3A38; font-size: 1.4rem; }
         .menu-toggle:hover { color: var(--gold); }
-
         /* Hero */
-        .hero {
-            padding: 70px 0 80px;
-            text-align: center;
-            position: relative;
-        }
+        .hero { padding: 70px 0 80px; text-align: center; position: relative; }
         .hero-glow {
             position: absolute;
             top: 20%;
@@ -150,39 +95,11 @@
             z-index: -1;
             pointer-events: none;
         }
-        .hero-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            font-weight: 500;
-            color: #2C2A29;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-        .hero-gold {
-            color: var(--gold);
-            font-weight: 600;
-        }
-        .hero-sub {
-            font-size: 1.2rem;
-            color: #5C5855;
-            margin: 16px auto 12px;
-        }
-        .hero-discount {
-            background: #232120;
-            display: inline-block;
-            padding: 6px 24px;
-            border-radius: 60px;
-            color: var(--gold-light);
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin: 15px 0 20px;
-        }
-        .hero-content p {
-            max-width: 620px;
-            margin: 20px auto 32px;
-            font-size: 1rem;
-            color: #5C5855;
-        }
+        .hero-content h2 { font-family: 'Playfair Display', serif; font-size: 3.2rem; font-weight: 500; color: #2C2A29; letter-spacing: -0.02em; line-height: 1.2; }
+        .hero-gold { color: var(--gold); font-weight: 600; }
+        .hero-sub { font-size: 1.2rem; color: #5C5855; margin: 16px auto 12px; }
+        .hero-discount { background: #232120; display: inline-block; padding: 6px 24px; border-radius: 60px; color: var(--gold-light); font-weight: 600; font-size: 0.85rem; margin: 15px 0 20px; }
+        .hero-content p { max-width: 620px; margin: 20px auto 32px; font-size: 1rem; color: #5C5855; }
         .btn-primary {
             background: transparent;
             border: 1.5px solid var(--gold);
@@ -196,11 +113,7 @@
             display: inline-block;
             text-decoration: none;
         }
-        .btn-primary:hover {
-            background: var(--gold);
-            color: white;
-            transform: translateY(-2px);
-        }
+        .btn-primary:hover { background: var(--gold); color: white; transform: translateY(-2px); }
         .gift-badge {
             margin-top: 28px;
             font-size: 0.9rem;
@@ -213,16 +126,9 @@
             backdrop-filter: blur(4px);
             border: 1px solid rgba(185,153,92,0.2);
         }
-
-        /* Featured grid (replaces carousel) */
-        .featured-section {
-            margin: 40px 0 40px;
-        }
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 32px;
-        }
+        /* Featured grid */
+        .featured-section { margin: 40px 0 40px; }
+        .featured-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px; }
         .featured-card {
             background: #FFFFFF;
             border-radius: 28px;
@@ -233,22 +139,9 @@
             cursor: pointer;
             position: relative;
         }
-        .featured-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-            border-color: rgba(185,153,92,0.3);
-        }
-        .featured-img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            background-color: #F6F0E8;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-        .featured-card:hover .featured-img {
-            transform: scale(1.02);
-        }
+        .featured-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: rgba(185,153,92,0.3); }
+        .featured-img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background-color: #F6F0E8; display: block; transition: transform 0.4s ease; }
+        .featured-card:hover .featured-img { transform: scale(1.02); }
         .featured-overlay {
             position: absolute;
             bottom: 0;
@@ -262,44 +155,14 @@
             align-items: flex-end;
             justify-content: center;
         }
-        .featured-card:hover .featured-overlay {
-            opacity: 1;
-        }
-        .featured-overlay-text {
-            color: white;
-            font-size: 0.82rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .featured-overlay-text i {
-            color: var(--gold-light);
-        }
-
+        .featured-card:hover .featured-overlay { opacity: 1; }
+        .featured-overlay-text { color: white; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.03em; display: flex; align-items: center; gap: 6px; }
+        .featured-overlay-text i { color: var(--gold-light); }
         /* Product grid */
-        .section-header {
-            text-align: center;
-            margin: 48px 0 40px;
-        }
-        .section-header h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
-            font-weight: 500;
-            color: #2C2A29;
-        }
-        .section-header p {
-            color: #7F7A75;
-            font-size: 0.95rem;
-            margin-top: 8px;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 32px;
-            margin-bottom: 60px;
-        }
+        .section-header { text-align: center; margin: 48px 0 40px; }
+        .section-header h3 { font-family: 'Playfair Display', serif; font-size: 2.3rem; font-weight: 500; color: #2C2A29; }
+        .section-header p { color: #7F7A75; font-size: 0.95rem; margin-top: 8px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px; margin-bottom: 60px; }
         .product-card {
             background: var(--white);
             border-radius: 28px;
@@ -310,22 +173,9 @@
             cursor: pointer;
             position: relative;
         }
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-            border-color: rgba(185,153,92,0.3);
-        }
-        .product-img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            background-color: #F6F0E8;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-        .product-card:hover .product-img {
-            transform: scale(1.02);
-        }
+        .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: rgba(185,153,92,0.3); }
+        .product-img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background-color: #F6F0E8; display: block; transition: transform 0.4s ease; }
+        .product-card:hover .product-img { transform: scale(1.02); }
         .product-overlay {
             position: absolute;
             bottom: 0;
@@ -339,22 +189,9 @@
             align-items: flex-end;
             justify-content: center;
         }
-        .product-card:hover .product-overlay {
-            opacity: 1;
-        }
-        .product-overlay-text {
-            color: white;
-            font-size: 0.82rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .product-overlay-text i {
-            color: var(--gold-light);
-        }
-
+        .product-card:hover .product-overlay { opacity: 1; }
+        .product-overlay-text { color: white; font-size: 0.82rem; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+        .product-overlay-text i { color: var(--gold-light); }
         /* Features */
         .features {
             display: flex;
@@ -368,26 +205,10 @@
             box-shadow: var(--shadow-sm);
             border: 1px solid #F0EBE4;
         }
-        .feature-item {
-            flex: 1;
-            text-align: center;
-            min-width: 170px;
-        }
-        .feature-item i {
-            font-size: 2.2rem;
-            color: var(--gold);
-            margin-bottom: 16px;
-        }
-        .feature-item h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .feature-item p {
-            font-size: 0.85rem;
-            color: #6B625C;
-        }
-
+        .feature-item { flex: 1; text-align: center; min-width: 170px; }
+        .feature-item i { font-size: 2.2rem; color: var(--gold); margin-bottom: 16px; }
+        .feature-item h4 { font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; }
+        .feature-item p { font-size: 0.85rem; color: #6B625C; }
         /* Story section */
         .story-section {
             background: #F4EFE9;
@@ -400,50 +221,15 @@
             gap: 48px;
         }
         .story-text { flex: 1.2; }
-        .story-text h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-        .story-text p {
-            color: #4A4540;
-            margin-bottom: 24px;
-        }
-        .story-signature {
-            font-style: italic;
-            border-left: 3px solid var(--gold);
-            padding-left: 18px;
-        }
-        .story-img {
-            flex: 0.9;
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-        .story-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Why Us Section */
-        .why-us {
-            margin: 60px 0 40px;
-        }
-        .section-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
-            font-weight: 500;
-            margin-bottom: 48px;
-            color: #2C2A29;
-        }
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-        }
+        .story-text h3 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; margin-bottom: 20px; }
+        .story-text p { color: #4A4540; margin-bottom: 24px; }
+        .story-signature { font-style: italic; border-left: 3px solid var(--gold); padding-left: 18px; }
+        .story-img { flex: 0.9; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-sm); }
+        .story-img img { width: 100%; height: auto; display: block; }
+        /* Why Us */
+        .why-us { margin: 60px 0 40px; }
+        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.3rem; font-weight: 500; margin-bottom: 48px; color: #2C2A29; }
+        .advantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
         .advantage-card {
             background: #FFFFFF;
             border-radius: 28px;
@@ -453,36 +239,13 @@
             transition: var(--transition);
             border: 1px solid #F0EBE4;
         }
-        .advantage-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-            border-color: rgba(185,153,92,0.3);
-        }
-        .advantage-icon {
-            font-size: 2.8rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-        .advantage-card h4 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: #2C2A29;
-        }
-        .advantage-card p {
-            color: #6B625C;
-            line-height: 1.5;
-        }
-
-        /* Team Section */
-        .team-section {
-            margin: 60px 0 40px;
-        }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 40px;
-        }
+        .advantage-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(185,153,92,0.3); }
+        .advantage-icon { font-size: 2.8rem; color: var(--gold); margin-bottom: 20px; }
+        .advantage-card h4 { font-size: 1.4rem; font-weight: 600; margin-bottom: 16px; color: #2C2A29; }
+        .advantage-card p { color: #6B625C; line-height: 1.5; }
+        /* Team */
+        .team-section { margin: 60px 0 40px; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
         .team-card {
             background: #FFFFFF;
             border-radius: 32px;
@@ -492,38 +255,12 @@
             text-align: center;
             border: 1px solid #F0EBE4;
         }
-        .team-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-        }
-        .team-img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            background: #F6F0E8;
-        }
-        .team-info {
-            padding: 24px 20px 28px;
-        }
-        .team-info h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #2C2A29;
-            margin-bottom: 6px;
-        }
-        .team-position {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--gold);
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-        .team-desc {
-            font-size: 0.9rem;
-            color: #6B625C;
-            line-height: 1.5;
-        }
-
+        .team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+        .team-img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #F6F0E8; }
+        .team-info { padding: 24px 20px 28px; }
+        .team-info h4 { font-size: 1.2rem; font-weight: 700; color: #2C2A29; margin-bottom: 6px; }
+        .team-position { font-size: 0.85rem; font-weight: 500; color: var(--gold); margin-bottom: 12px; letter-spacing: 0.5px; }
+        .team-desc { font-size: 0.9rem; color: #6B625C; line-height: 1.5; }
         /* Gift promo */
         .gift-promo {
             background: white;
@@ -534,18 +271,8 @@
             box-shadow: var(--shadow-sm);
             border: 1px solid rgba(185,153,92,0.2);
         }
-        .gift-promo i {
-            font-size: 2.4rem;
-            color: var(--gold);
-            margin-bottom: 12px;
-        }
-        .contact-row {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
-            margin-top: 32px;
-        }
+        .gift-promo i { font-size: 2.4rem; color: var(--gold); margin-bottom: 12px; }
+        .contact-row { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 32px; }
         .contact-info {
             background: #F9F5EF;
             border-radius: 60px;
@@ -558,13 +285,8 @@
             color: inherit;
             transition: var(--transition);
         }
-        .contact-info:hover {
-            background: var(--gold-light);
-            color: #2C2A29;
-            transform: translateY(-2px);
-        }
+        .contact-info:hover { background: var(--gold-light); color: #2C2A29; transform: translateY(-2px); }
         .contact-info i { color: var(--gold); }
-
         /* Footer */
         footer {
             background: #1E1C1A;
@@ -580,51 +302,17 @@
             gap: 40px;
             margin-bottom: 48px;
         }
-        .footer-col {
-            flex: 1;
-            min-width: 180px;
-        }
-        .footer-col h4 {
-            color: var(--gold);
-            margin-bottom: 18px;
-        }
-        .footer-col p, .footer-col a {
-            color: #CBC2BA;
-            text-decoration: none;
-            font-size: 0.9rem;
-            line-height: 1.7;
-            display: block;
-            margin-bottom: 8px;
-        }
+        .footer-col { flex: 1; min-width: 180px; }
+        .footer-col h4 { color: var(--gold); margin-bottom: 18px; }
+        .footer-col p, .footer-col a { color: #CBC2BA; text-decoration: none; font-size: 0.9rem; line-height: 1.7; display: block; margin-bottom: 8px; }
         .footer-col a:hover { color: var(--gold); }
-        .footer-phone {
-            color: #CBC2BA;
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: inline;
-        }
+        .footer-phone { color: #CBC2BA; text-decoration: none; font-size: 0.9rem; display: inline; }
         .footer-phone:hover { color: var(--gold); }
-        .social-icons {
-            display: flex;
-            gap: 18px;
-            margin-top: 12px;
-        }
-        .social-icons a {
-            color: #CBC2BA;
-            display: block;
-            margin-bottom: 0;
-            font-size: 1.3rem;
-            transition: color 0.2s;
-        }
+        .social-icons { display: flex; gap: 18px; margin-top: 12px; }
+        .social-icons a { color: #CBC2BA; display: block; margin-bottom: 0; font-size: 1.3rem; transition: color 0.2s; }
         .social-icons a:hover { color: var(--gold); }
-        .copyright {
-            text-align: center;
-            border-top: 1px solid rgba(194, 161, 91, 0.2);
-            padding-top: 32px;
-            font-size: 0.8rem;
-        }
-
-        /* Contact modal */
+        .copyright { text-align: center; border-top: 1px solid rgba(194, 161, 91, 0.2); padding-top: 32px; font-size: 0.8rem; }
+        /* Modal */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -636,9 +324,7 @@
             justify-content: center;
             padding: 20px;
         }
-        .modal-overlay.open {
-            display: flex;
-        }
+        .modal-overlay.open { display: flex; }
         .modal-box {
             background: #FFFDF9;
             border-radius: 32px;
@@ -652,42 +338,14 @@
         }
         @keyframes modalIn {
             from { opacity: 0; transform: translateY(20px) scale(0.97); }
-            to   { opacity: 1; transform: translateY(0) scale(1); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
-        .modal-close {
-            position: absolute;
-            top: 18px;
-            right: 22px;
-            background: none;
-            border: none;
-            font-size: 1.6rem;
-            cursor: pointer;
-            color: #9C9590;
-            transition: color 0.2s;
-            line-height: 1;
-        }
+        .modal-close { position: absolute; top: 18px; right: 22px; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: #9C9590; }
         .modal-close:hover { color: #2C2A29; }
-        .modal-icon {
-            font-size: 2.4rem;
-            color: var(--gold);
-            margin-bottom: 16px;
-        }
-        .modal-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-        .modal-desc {
-            color: #6B625C;
-            font-size: 0.92rem;
-            margin-bottom: 24px;
-        }
-        .modal-contacts {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
+        .modal-icon { font-size: 2.4rem; color: var(--gold); margin-bottom: 16px; }
+        .modal-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 500; margin-bottom: 8px; }
+        .modal-desc { color: #6B625C; font-size: 0.92rem; margin-bottom: 24px; }
+        .modal-contacts { display: flex; flex-direction: column; gap: 14px; }
         .modal-contact-item {
             background: #F4EFE9;
             border-radius: 16px;
@@ -702,18 +360,9 @@
             transition: var(--transition);
             border: 1px solid transparent;
         }
-        .modal-contact-item:hover {
-            background: var(--gold-light);
-            border-color: rgba(185,153,92,0.3);
-            transform: translateX(4px);
-        }
-        .modal-contact-item i {
-            width: 20px;
-            color: var(--gold);
-            font-size: 1rem;
-        }
-
-        /* Scroll to top */
+        .modal-contact-item:hover { background: var(--gold-light); border-color: rgba(185,153,92,0.3); transform: translateX(4px); }
+        .modal-contact-item i { width: 20px; color: var(--gold); font-size: 1rem; }
+        /* Scroll top */
         .scroll-top-btn {
             position: fixed;
             bottom: 32px;
@@ -736,16 +385,8 @@
             align-items: center;
             justify-content: center;
         }
-        .scroll-top-btn.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-        .scroll-top-btn:hover {
-            background: var(--gold-dark);
-            transform: translateY(-2px);
-        }
-
+        .scroll-top-btn.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .scroll-top-btn:hover { background: var(--gold-dark); transform: translateY(-2px); }
         /* Responsive */
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
@@ -767,11 +408,7 @@
                 z-index: 100;
             }
             .nav-links.open { display: flex; }
-            .nav-links a {
-                padding: 12px 24px;
-                border-radius: 0;
-                font-size: 1rem;
-            }
+            .nav-links a { padding: 12px 24px; border-radius: 0; font-size: 1rem; }
             .nav-links a:hover { background: rgba(185,153,92,0.08); }
             .menu-toggle { display: block; }
             .right-group { gap: 0.8rem; }
@@ -829,7 +466,7 @@
         </div>
     </section>
 
-    <!-- Featured grid (replaces carousel) -->
+    <!-- Featured grid: first 3 images (4,6,8) -->
     <section id="featured">
         <div class="featured-section">
             <div class="container">
@@ -842,7 +479,7 @@
         </div>
     </section>
 
-    <!-- Product grid: remaining images (excluding disallowed) -->
+    <!-- Product grid: all remaining images -->
     <div class="section-header">
         <h3 data-key="catalog_title">Другие эксклюзивные предметы</h3>
         <p data-key="catalog_sub">Полная коллекция</p>
@@ -865,64 +502,31 @@
                 <div class="story-signature" data-key="story_sig">Элитный стиль — элитный перекресток стиля и разумных инвестиций</div>
             </div>
             <div class="story-img">
-                <img src="images/lvtu/1.png" alt="Luxury boutique">
+                <img src="images/lvtu/4.png" alt="Luxury boutique">
             </div>
         </div>
     </section>
 
-    <!-- Why choose us section -->
+    <!-- Why choose us -->
     <div class="why-us">
         <div class="container">
             <h2 class="section-title" data-key="why_us_title">Почему выбирают нас?</h2>
             <div class="advantages-grid">
-                <div class="advantage-card">
-                    <div class="advantage-icon"><i class="fas fa-bag-shopping"></i></div>
-                    <h4 data-key="why_us_1_title">Большой выбор</h4>
-                    <p data-key="why_us_1_desc">У нас большой выбор новых и восстановленных сумок, что дает вам бесконечные возможности и отличную возможность обмена.</p>
-                </div>
-                <div class="advantage-card">
-                    <div class="advantage-icon"><i class="fas fa-spa"></i></div>
-                    <h4 data-key="why_us_2_title">Профессиональный уход</h4>
-                    <p data-key="why_us_2_desc">У нас работают профессиональные специалисты по уходу за кожей, которые бесплатно проведут техническое обслуживание и чистку ваших сумок.</p>
-                </div>
-                <div class="advantage-card">
-                    <div class="advantage-icon"><i class="fas fa-gem"></i></div>
-                    <h4 data-key="why_us_3_title">Членская программа</h4>
-                    <p data-key="why_us_3_desc">Став нашим членом, вы получите членскую карту; ваши покупки будут конвертироваться в баллы, которые можно обменять на призы в конце года. Наши участники ежемесячно пользуются различными бесплатными пробными программами.</p>
-                </div>
+                <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-bag-shopping"></i></div><h4 data-key="why_us_1_title">Большой выбор</h4><p data-key="why_us_1_desc">У нас большой выбор новых и восстановленных сумок, что дает вам бесконечные возможности и отличную возможность обмена.</p></div>
+                <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-spa"></i></div><h4 data-key="why_us_2_title">Профессиональный уход</h4><p data-key="why_us_2_desc">У нас работают профессиональные специалисты по уходу за кожей, которые бесплатно проведут техническое обслуживание и чистку ваших сумок.</p></div>
+                <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-gem"></i></div><h4 data-key="why_us_3_title">Членская программа</h4><p data-key="why_us_3_desc">Став нашим членом, вы получите членскую карту; ваши покупки будут конвертироваться в баллы, которые можно обменять на призы в конце года. Наши участники ежемесячно пользуются различными бесплатными пробными программами.</p></div>
             </div>
         </div>
     </div>
 
-    <!-- Team section -->
+    <!-- Team -->
     <div class="team-section">
         <div class="container">
             <h2 class="section-title" data-key="team_title">Наша команда</h2>
             <div class="team-grid">
-                <div class="team-card">
-                    <img class="team-img" src="images/lvtu/ren1.jpg" alt="Dimitry Podstrigich" loading="lazy">
-                    <div class="team-info">
-                        <h4 data-key="team_member1_name">Подстригич Димитрий Геннадьевич</h4>
-                        <div class="team-position" data-key="team_member1_pos">Специалист по работе с клиентами</div>
-                        <div class="team-desc" data-key="team_member1_desc">Многолетний опыт работы в продажах. Умею выявлять потребности клиентов, поддерживать долгосрочное сотрудничество и предоставлять максимально качественное обслуживание.</div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img class="team-img" src="images/lvtu/ren2.jpg" alt="Violetta Roganova" loading="lazy">
-                    <div class="team-info">
-                        <h4 data-key="team_member2_name">Роганова Виолетта Юрьевна</h4>
-                        <div class="team-position" data-key="team_member2_pos">Специалист по развитию рынка</div>
-                        <div class="team-desc" data-key="team_member2_desc">Активный и целеустремлённый специалист, занимающийся поиском новых клиентов и освоением рынка. Обладаю высокой исполнительностью.</div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img class="team-img" src="images/lvtu/ren3.jpg" alt="Olga Stefanovich" loading="lazy">
-                    <div class="team-info">
-                        <h4 data-key="team_member3_name">Стефанович Ольга Леонидовна</h4>
-                        <div class="team-position" data-key="team_member3_pos">Универсальный специалист по обслуживанию</div>
-                        <div class="team-desc" data-key="team_member3_desc">Отлично знаю продукцию, умею эффективно общаться и координировать работу. Решаю все вопросы клиентов комплексно и сопровождаю сотрудничество на всех этапах.</div>
-                    </div>
-                </div>
+                <div class="team-card"><img class="team-img" src="images/lvtu/ren1.jpg" alt="Dimitry Podstrigich" loading="lazy"><div class="team-info"><h4 data-key="team_member1_name">Подстригич Димитрий Геннадьевич</h4><div class="team-position" data-key="team_member1_pos">Специалист по работе с клиентами</div><div class="team-desc" data-key="team_member1_desc">Многолетний опыт работы в продажах. Умею выявлять потребности клиентов, поддерживать долгосрочное сотрудничество и предоставлять максимально качественное обслуживание.</div></div></div>
+                <div class="team-card"><img class="team-img" src="images/lvtu/ren2.jpg" alt="Violetta Roganova" loading="lazy"><div class="team-info"><h4 data-key="team_member2_name">Роганова Виолетта Юрьевна</h4><div class="team-position" data-key="team_member2_pos">Специалист по развитию рынка</div><div class="team-desc" data-key="team_member2_desc">Активный и целеустремлённый специалист, занимающийся поиском новых клиентов и освоением рынка. Обладаю высокой исполнительностью.</div></div></div>
+                <div class="team-card"><img class="team-img" src="images/lvtu/ren3.jpg" alt="Olga Stefanovich" loading="lazy"><div class="team-info"><h4 data-key="team_member3_name">Стефанович Ольга Леонидовна</h4><div class="team-position" data-key="team_member3_pos">Универсальный специалист по обслуживанию</div><div class="team-desc" data-key="team_member3_desc">Отлично знаю продукцию, умею эффективно общаться и координировать работу. Решаю все вопросы клиентов комплексно и сопровождаю сотрудничество на всех этапах.</div></div></div>
             </div>
         </div>
     </div>
@@ -931,20 +535,9 @@
         <i class="fas fa-gift"></i>
         <p data-key="promo_text">🎁 Ассортимент в наличии: Сумки LV, Hermès, золотые и серебряные украшения, элитные часы, драгоценности, элитная водка, премиальное вино</p>
         <div class="contact-row">
-            <a class="contact-info" href="tel:+375257811111">
-                <i class="fas fa-phone-alt"></i>
-                <span>+375 (25) 781-11-11</span>
-            </a>
-            <a class="contact-info" href="https://wa.me/375257811111" target="_blank" rel="noopener">
-                <i class="fab fa-whatsapp"></i>
-                <span data-key="contact_wa">WhatsApp</span>
-            </a>
-            <div class="contact-info">
-                <i class="fas fa-map-marker-alt"></i>
-                <a href="https://yandex.by/maps/?text=Янки Купалы 25, Минск" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
-                    Я́нки Купа́лы 25
-                </a>
-            </div>
+            <a class="contact-info" href="tel:+375257811111"><i class="fas fa-phone-alt"></i><span>+375 (25) 781-11-11</span></a>
+            <a class="contact-info" href="https://wa.me/375257811111" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span data-key="contact_wa">WhatsApp</span></a>
+            <div class="contact-info"><i class="fas fa-map-marker-alt"></i><a href="https://yandex.by/maps/?text=Янки Купалы 25, Минск" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Я́нки Купа́лы 25</a></div>
         </div>
         <div style="margin-top: 24px; font-size: 0.85rem; color:#6B625C;" data-key="worktime">Ежедневно: 11:00 – 23:00, комиссионный бутик премиум-класса</div>
     </div>
@@ -952,42 +545,10 @@
     <footer id="contact">
         <div class="container" style="padding: 0 24px;">
             <div class="footer-content">
-                <div class="footer-col">
-                    <h4 data-key="footer_brand">Элитный стиль</h4>
-                    <p data-key="footer_desc">Скупка и комиссионная продажа</p>
-                    <p data-key="footer_subtitle">Элитные зарубежные бренды</p>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/elitstyle11" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" aria-label="Telegram" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
-                        <a href="https://wa.me/375257811111" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4 data-key="footer_catalog">Каталог</h4>
-                    <a href="#featured" data-key="footer_bags">Сумки LV/Hermès</a>
-                    <a href="#featured" data-key="footer_watch">Часы & Драгоценности</a>
-                    <a href="#featured" data-key="footer_alco">Алкоголь премиум</a>
-                    <a href="#featured" data-key="footer_vintage">Винтаж</a>
-                </div>
-                <div class="footer-col">
-                    <h4 data-key="footer_service">Услуги</h4>
-                    <a href="#about" data-key="footer_eval">Оценка и выкуп</a>
-                    <a href="#about" data-key="footer_comm">Комиссия</a>
-                    <a href="#contact" data-key="footer_delivery">Доставка по РБ</a>
-                    <a href="#contact" data-key="footer_gift">Подарочные наборы</a>
-                </div>
-                <div class="footer-col">
-                    <h4 data-key="footer_contacts">Контакты</h4>
-                    <p><i class="fas fa-phone-alt"></i> <a class="footer-phone" href="tel:+375257811111">+375 (25) 781-11-11</a></p>
-                    <p><i class="fas fa-map-pin"></i> 
-                        <a href="https://yandex.by/maps/?text=Янки Купалы 25, Минск" target="_blank" rel="noopener noreferrer" style="color: #CBC2BA; text-decoration: none;">
-                            Я́нки Купа́лы 25
-                        </a>
-                    </p>
-                    <p data-key="footer_country">Беларусь, Минск</p>
-                </div>
+                <div class="footer-col"><h4 data-key="footer_brand">Элитный стиль</h4><p data-key="footer_desc">Скупка и комиссионная продажа</p><p data-key="footer_subtitle">Элитные зарубежные бренды</p><div class="social-icons"><a href="https://www.instagram.com/elitstyle11" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Telegram" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a><a href="https://wa.me/375257811111" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a></div></div>
+                <div class="footer-col"><h4 data-key="footer_catalog">Каталог</h4><a href="#featured" data-key="footer_bags">Сумки LV/Hermès</a><a href="#featured" data-key="footer_watch">Часы & Драгоценности</a><a href="#featured" data-key="footer_alco">Алкоголь премиум</a><a href="#featured" data-key="footer_vintage">Винтаж</a></div>
+                <div class="footer-col"><h4 data-key="footer_service">Услуги</h4><a href="#about" data-key="footer_eval">Оценка и выкуп</a><a href="#about" data-key="footer_comm">Комиссия</a><a href="#contact" data-key="footer_delivery">Доставка по РБ</a><a href="#contact" data-key="footer_gift">Подарочные наборы</a></div>
+                <div class="footer-col"><h4 data-key="footer_contacts">Контакты</h4><p><i class="fas fa-phone-alt"></i> <a class="footer-phone" href="tel:+375257811111">+375 (25) 781-11-11</a></p><p><i class="fas fa-map-pin"></i> <a href="https://yandex.by/maps/?text=Янки Купалы 25, Минск" target="_blank" rel="noopener noreferrer" style="color: #CBC2BA; text-decoration: none;">Я́нки Купа́лы 25</a></p><p data-key="footer_country">Беларусь, Минск</p></div>
             </div>
             <div class="copyright"><p data-key="copyright">© 2026 Элитный стиль — Премиум комиссионный бутик. Скидки 60–70% + подарок к заказу.</p></div>
             <div style="text-align: center; font-size: 0.7rem; color: rgba(220, 210, 202, 0.5); margin-top: 16px;">VenusG</div>
@@ -995,7 +556,7 @@
     </footer>
 </div>
 
-<!-- Contact modal -->
+<!-- Modal -->
 <div id="contactModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-box">
         <button class="modal-close" id="modalClose" aria-label="Close">×</button>
@@ -1003,32 +564,15 @@
         <div class="modal-title" id="modalTitle" data-key="modal_title">Связаться с нами</div>
         <div class="modal-desc" data-key="modal_desc">Свяжитесь с нами для консультации или записи</div>
         <div class="modal-contacts">
-            <a class="modal-contact-item" href="tel:+375257811111">
-                <i class="fas fa-phone-alt"></i>
-                <span>+375 (25) 781-11-11</span>
-            </a>
-            <a class="modal-contact-item" href="https://wa.me/375257811111" target="_blank" rel="noopener">
-                <i class="fab fa-whatsapp"></i>
-                <span data-key="modal_wa">Написать в WhatsApp</span>
-            </a>
-            <div class="modal-contact-item" style="cursor:pointer;">
-                <i class="fas fa-map-marker-alt"></i>
-                <a href="https://yandex.by/maps/?text=Янки Купалы 25, Минск" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
-                    Я́нки Купа́лы 25, Минск
-                </a>
-            </div>
-            <div class="modal-contact-item" style="cursor:default;">
-                <i class="fas fa-clock"></i>
-                <span data-key="modal_hours">Ежедневно 11:00 – 23:00</span>
-            </div>
+            <a class="modal-contact-item" href="tel:+375257811111"><i class="fas fa-phone-alt"></i><span>+375 (25) 781-11-11</span></a>
+            <a class="modal-contact-item" href="https://wa.me/375257811111" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span data-key="modal_wa">Написать в WhatsApp</span></a>
+            <div class="modal-contact-item" style="cursor:pointer;"><i class="fas fa-map-marker-alt"></i><a href="https://yandex.by/maps/?text=Янки Купалы 25, Минск" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Я́нки Купа́лы 25, Минск</a></div>
+            <div class="modal-contact-item" style="cursor:default;"><i class="fas fa-clock"></i><span data-key="modal_hours">Ежедневно 11:00 – 23:00</span></div>
         </div>
     </div>
 </div>
 
-<!-- Scroll to top button -->
-<button id="scrollToTop" class="scroll-top-btn" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-</button>
+<button id="scrollToTop" class="scroll-top-btn" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
 
 <script>
     // -------- TRANSLATIONS --------
@@ -1241,14 +785,17 @@
 
     let currentLang = 'ru';
 
-    // -------- FEATURED GRID (1-10 excluding 2 and 7) --------
-    const featuredIds = [1,3,4,5,6,8,9,10];
-    const featuredGrid = document.getElementById('featuredGrid');
+    // 定义要展示的所有图片编号（按顺序）
+    const allImageNumbers = [4,6,8,13,14,17,18,25,26,31,32,33,35,37,39,40,41,42,43,46,47,51,52,55,58,59,62];
+    const featuredNumbers = allImageNumbers.slice(0,3); // 前3个: 4,6,8
+    const productNumbers = allImageNumbers.slice(3);   // 其余24个
 
+    // 渲染推荐款区域
+    const featuredGrid = document.getElementById('featuredGrid');
     function renderFeatured() {
         if (!featuredGrid) return;
         featuredGrid.innerHTML = '';
-        featuredIds.forEach(id => {
+        featuredNumbers.forEach(id => {
             const card = document.createElement('div');
             card.className = 'featured-card';
             const img = document.createElement('img');
@@ -1256,9 +803,7 @@
             img.src = `images/lvtu/${id}.png`;
             img.alt = `Luxury item ${id}`;
             img.loading = 'lazy';
-            img.onerror = function() {
-                this.src = 'data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22500%22 height%3D%22500%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%23f4ede5%22%2F%3E%3C%2Fsvg%3E';
-            };
+            img.onerror = function() { this.src = 'data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22500%22 height%3D%22500%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%23f4ede5%22%2F%3E%3C%2Fsvg%3E'; };
             const overlay = document.createElement('div');
             overlay.className = 'featured-overlay';
             overlay.innerHTML = '<span class="featured-overlay-text"><i class="fas fa-phone-alt"></i><span data-key="overlay_contact">Узнать цену</span></span>';
@@ -1269,25 +814,20 @@
         });
     }
 
-    // -------- PRODUCT GRID (11-62 excluding 15,30,38,57) --------
-    const excludedProductIds = [15,30,38,57];
+    // 渲染其他商品区域
     const productGrid = document.getElementById('remainingGrid');
-
     function renderProductGrid() {
         if (!productGrid) return;
         productGrid.innerHTML = '';
-        for (let i = 11; i <= 62; i++) {
-            if (excludedProductIds.includes(i)) continue;
+        productNumbers.forEach(id => {
             const card = document.createElement('div');
             card.className = 'product-card';
             const img = document.createElement('img');
             img.className = 'product-img';
-            img.src = `images/lvtu/${i}.png`;
-            img.alt = `Luxury item ${i}`;
+            img.src = `images/lvtu/${id}.png`;
+            img.alt = `Luxury item ${id}`;
             img.loading = 'lazy';
-            img.onerror = function() {
-                this.src = 'data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22500%22 height%3D%22500%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%23f4ede5%22%2F%3E%3C%2Fsvg%3E';
-            };
+            img.onerror = function() { this.src = 'data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22500%22 height%3D%22500%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%23f4ede5%22%2F%3E%3C%2Fsvg%3E'; };
             const overlay = document.createElement('div');
             overlay.className = 'product-overlay';
             overlay.innerHTML = '<span class="product-overlay-text"><i class="fas fa-phone-alt"></i><span data-key="overlay_contact">Узнать цену</span></span>';
@@ -1295,43 +835,30 @@
             card.appendChild(overlay);
             card.addEventListener('click', openModal);
             productGrid.appendChild(card);
-        }
+        });
     }
 
-    // -------- CONTACT MODAL --------
+    // 联系弹窗
     const modal = document.getElementById('contactModal');
-
-    function openModal() {
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        modal.classList.remove('open');
-        document.body.style.overflow = '';
-    }
-
+    function openModal() { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }
     document.getElementById('modalClose').addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-    // -------- SCROLL TO TOP --------
+    // 返回顶部
     const scrollBtn = document.getElementById('scrollToTop');
-    window.addEventListener('scroll', () => {
-        scrollBtn.classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
+    window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 400), { passive: true });
     scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // -------- MOBILE NAV --------
+    // 移动端导航
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-
     menuToggle.addEventListener('click', () => {
         const isOpen = navLinks.classList.toggle('open');
         menuToggle.setAttribute('aria-expanded', isOpen);
         menuToggle.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
     });
-
     navLinks.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
             navLinks.classList.remove('open');
@@ -1340,27 +867,23 @@
         });
     });
 
-    // -------- LANGUAGE SYSTEM --------
+    // 多语言更新
     function updatePageLanguage() {
         const t = translations[currentLang];
         document.documentElement.lang = currentLang;
-
         document.querySelectorAll('[data-key]').forEach(el => {
             const key = el.getAttribute('data-key');
             if (!t[key]) return;
             if (key === 'hero_title') el.innerHTML = t[key];
             else el.textContent = t[key];
         });
-
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
         });
-
         document.querySelectorAll('#featuredGrid [data-key="overlay_contact"], #remainingGrid [data-key="overlay_contact"]').forEach(el => {
             el.textContent = t.overlay_contact;
         });
     }
-
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const lang = btn.getAttribute('data-lang');
@@ -1370,7 +893,7 @@
         });
     });
 
-    // -------- SMOOTH NAVIGATION --------
+    // 平滑滚动
     document.querySelectorAll('.nav-links a, .btn-primary, .footer-col a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -1382,7 +905,7 @@
         });
     });
 
-    // -------- INIT --------
+    // 初始化
     renderFeatured();
     renderProductGrid();
     updatePageLanguage();
