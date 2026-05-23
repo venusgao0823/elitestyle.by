@@ -214,85 +214,68 @@
             border: 1px solid rgba(185,153,92,0.2);
         }
 
-        /* Carousel */
-        .carousel-section {
+        /* Featured grid (replaces carousel) */
+        .featured-section {
             margin: 40px 0 40px;
         }
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            border-radius: 32px;
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        .featured-card {
+            background: #FFFFFF;
+            border-radius: 28px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
-            background: #1a1816;
-        }
-        .carousel-slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .carousel-slide {
-            flex: 0 0 100%;
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
-            background-color: #F6F0E8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(4px);
-            border: none;
-            color: white;
-            font-size: 1.8rem;
-            padding: 0 12px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #F0EBE4;
             cursor: pointer;
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.2s;
-            z-index: 2;
+            position: relative;
         }
-        .carousel-btn:hover {
-            background: var(--gold);
-            color: #1E1C1A;
+        .featured-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(185,153,92,0.3);
         }
-        .carousel-prev { left: 20px; }
-        .carousel-next { right: 20px; }
-        .carousel-dots {
+        .featured-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            background-color: #F6F0E8;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .featured-card:hover .featured-img {
+            transform: scale(1.02);
+        }
+        .featured-overlay {
             position: absolute;
-            bottom: 20px;
+            bottom: 0;
             left: 0;
             right: 0;
+            background: linear-gradient(to top, rgba(35,33,32,0.82) 0%, transparent 100%);
+            padding: 20px 18px 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
             display: flex;
+            align-items: flex-end;
             justify-content: center;
-            gap: 12px;
-            z-index: 2;
         }
-        .dot {
-            width: 10px;
-            height: 10px;
-            background: rgba(255,255,240,0.6);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.2s;
+        .featured-card:hover .featured-overlay {
+            opacity: 1;
         }
-        .dot.active {
-            background: var(--gold);
-            width: 24px;
-            border-radius: 8px;
+        .featured-overlay-text {
+            color: white;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .featured-overlay-text i {
+            color: var(--gold-light);
         }
 
         /* Product grid */
@@ -335,7 +318,7 @@
         .product-img {
             width: 100%;
             aspect-ratio: 1 / 1;
-            object-fit: contain;
+            object-fit: cover;
             background-color: #F6F0E8;
             display: block;
             transition: transform 0.4s ease;
@@ -442,6 +425,103 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        /* Why Us Section */
+        .why-us {
+            margin: 60px 0 40px;
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            font-weight: 500;
+            margin-bottom: 48px;
+            color: #2C2A29;
+        }
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        .advantage-card {
+            background: #FFFFFF;
+            border-radius: 28px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid #F0EBE4;
+        }
+        .advantage-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(185,153,92,0.3);
+        }
+        .advantage-icon {
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        .advantage-card h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #2C2A29;
+        }
+        .advantage-card p {
+            color: #6B625C;
+            line-height: 1.5;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin: 60px 0 40px;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+        }
+        .team-card {
+            background: #FFFFFF;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid #F0EBE4;
+        }
+        .team-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+        .team-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            background: #F6F0E8;
+        }
+        .team-info {
+            padding: 24px 20px 28px;
+        }
+        .team-info h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2C2A29;
+            margin-bottom: 6px;
+        }
+        .team-position {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .team-desc {
+            font-size: 0.9rem;
+            color: #6B625C;
+            line-height: 1.5;
         }
 
         /* Gift promo */
@@ -696,9 +776,10 @@
             .menu-toggle { display: block; }
             .right-group { gap: 0.8rem; }
             .hero-content h2 { font-size: 2.2rem; }
-            .carousel-btn { width: 36px; height: 36px; font-size: 1.2rem; }
             .story-section { padding: 36px 24px; }
             .features { padding: 36px 24px; border-radius: 32px; }
+            .section-title { font-size: 1.8rem; }
+            .advantages-grid, .team-grid, .featured-grid, .product-grid { gap: 24px; }
             .modal-box { padding: 40px 24px 32px; }
             .scroll-top-btn { bottom: 20px; right: 20px; }
         }
@@ -712,7 +793,7 @@
         </div>
         <nav class="nav-links" id="navLinks">
             <a href="#home" data-key="nav_home">Главная</a>
-            <a href="#carousel" data-key="nav_catalog">Каталог</a>
+            <a href="#featured" data-key="nav_catalog">Каталог</a>
             <a href="#about" data-key="nav_about">О нас</a>
             <a href="#contact" data-key="nav_contact">Контакты</a>
         </nav>
@@ -742,25 +823,26 @@
                     <span data-key="gift_text">При заказе в подарок: парфюм и помада известных брендов</span>
                 </div>
                 <div style="margin-top: 32px;">
-                    <a href="#carousel" class="btn-primary" data-key="hero_btn">Смотреть коллекцию</a>
+                    <a href="#featured" class="btn-primary" data-key="hero_btn">Смотреть коллекцию</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Carousel: images 1–10 -->
-    <section id="carousel">
-        <div class="carousel-section">
-            <div class="carousel-container" id="carouselContainer">
-                <div class="carousel-slides" id="carouselSlides"></div>
-                <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous">&#8249;</button>
-                <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next">&#8250;</button>
-                <div class="carousel-dots" id="carouselDots"></div>
+    <!-- Featured grid (replaces carousel) -->
+    <section id="featured">
+        <div class="featured-section">
+            <div class="container">
+                <div class="section-header">
+                    <h3 data-key="featured_title">Рекомендуемые модели</h3>
+                    <p data-key="featured_sub">Эксклюзивные предложения</p>
+                </div>
+                <div class="featured-grid" id="featuredGrid"></div>
             </div>
         </div>
     </section>
 
-    <!-- Product grid: images 11–62 -->
+    <!-- Product grid: remaining images (excluding disallowed) -->
     <div class="section-header">
         <h3 data-key="catalog_title">Другие эксклюзивные предметы</h3>
         <p data-key="catalog_sub">Полная коллекция</p>
@@ -787,6 +869,63 @@
             </div>
         </div>
     </section>
+
+    <!-- Why choose us section -->
+    <div class="why-us">
+        <div class="container">
+            <h2 class="section-title" data-key="why_us_title">Почему выбирают нас?</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon"><i class="fas fa-bag-shopping"></i></div>
+                    <h4 data-key="why_us_1_title">Большой выбор</h4>
+                    <p data-key="why_us_1_desc">У нас большой выбор новых и восстановленных сумок, что дает вам бесконечные возможности и отличную возможность обмена.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon"><i class="fas fa-spa"></i></div>
+                    <h4 data-key="why_us_2_title">Профессиональный уход</h4>
+                    <p data-key="why_us_2_desc">У нас работают профессиональные специалисты по уходу за кожей, которые бесплатно проведут техническое обслуживание и чистку ваших сумок.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon"><i class="fas fa-gem"></i></div>
+                    <h4 data-key="why_us_3_title">Членская программа</h4>
+                    <p data-key="why_us_3_desc">Став нашим членом, вы получите членскую карту; ваши покупки будут конвертироваться в баллы, которые можно обменять на призы в конце года. Наши участники ежемесячно пользуются различными бесплатными пробными программами.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team section -->
+    <div class="team-section">
+        <div class="container">
+            <h2 class="section-title" data-key="team_title">Наша команда</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img class="team-img" src="images/lvtu/ren1.jpg" alt="Dimitry Podstrigich" loading="lazy">
+                    <div class="team-info">
+                        <h4 data-key="team_member1_name">Подстригич Димитрий Геннадьевич</h4>
+                        <div class="team-position" data-key="team_member1_pos">Специалист по работе с клиентами</div>
+                        <div class="team-desc" data-key="team_member1_desc">Многолетний опыт работы в продажах. Умею выявлять потребности клиентов, поддерживать долгосрочное сотрудничество и предоставлять максимально качественное обслуживание.</div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img class="team-img" src="images/lvtu/ren2.jpg" alt="Violetta Roganova" loading="lazy">
+                    <div class="team-info">
+                        <h4 data-key="team_member2_name">Роганова Виолетта Юрьевна</h4>
+                        <div class="team-position" data-key="team_member2_pos">Специалист по развитию рынка</div>
+                        <div class="team-desc" data-key="team_member2_desc">Активный и целеустремлённый специалист, занимающийся поиском новых клиентов и освоением рынка. Обладаю высокой исполнительностью.</div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img class="team-img" src="images/lvtu/ren3.jpg" alt="Olga Stefanovich" loading="lazy">
+                    <div class="team-info">
+                        <h4 data-key="team_member3_name">Стефанович Ольга Леонидовна</h4>
+                        <div class="team-position" data-key="team_member3_pos">Универсальный специалист по обслуживанию</div>
+                        <div class="team-desc" data-key="team_member3_desc">Отлично знаю продукцию, умею эффективно общаться и координировать работу. Решаю все вопросы клиентов комплексно и сопровождаю сотрудничество на всех этапах.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="gift-promo" id="contact-promo">
         <i class="fas fa-gift"></i>
@@ -818,17 +957,19 @@
                     <p data-key="footer_desc">Скупка и комиссионная продажа</p>
                     <p data-key="footer_subtitle">Элитные зарубежные бренды</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/elitstyle11?igsh=N3RzMmN4bnFpY2Rt&utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/elitstyle11" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                         <a href="#" aria-label="Telegram" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
                         <a href="https://wa.me/375257811111" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4 data-key="footer_catalog">Каталог</h4>
-                    <a href="#carousel" data-key="footer_bags">Сумки LV/Hermès</a>
-                    <a href="#carousel" data-key="footer_watch">Часы & Драгоценности</a>
-                    <a href="#carousel" data-key="footer_alco">Алкоголь премиум</a>
-                    <a href="#carousel" data-key="footer_vintage">Винтаж</a>
+                    <a href="#featured" data-key="footer_bags">Сумки LV/Hermès</a>
+                    <a href="#featured" data-key="footer_watch">Часы & Драгоценности</a>
+                    <a href="#featured" data-key="footer_alco">Алкоголь премиум</a>
+                    <a href="#featured" data-key="footer_vintage">Винтаж</a>
                 </div>
                 <div class="footer-col">
                     <h4 data-key="footer_service">Услуги</h4>
@@ -849,11 +990,7 @@
                 </div>
             </div>
             <div class="copyright"><p data-key="copyright">© 2026 Элитный стиль — Премиум комиссионный бутик. Скидки 60–70% + подарок к заказу.</p></div>
-            <div style="text-align: center; font-size: 0.7rem; color: rgba(220, 210, 202, 0.5); margin-top: 16px;">
-                VenusG
-            </div>
-        </div>
-    </footer>
+            <div style="text-align: center; font-size: 0.7rem; color: rgba(220, 210, 202, 0.5); margin-top: 16px;">VenusG</div>
         </div>
     </footer>
 </div>
@@ -904,6 +1041,8 @@
             hero_desc: "Только оригинал. Люксовые сумки, часы, украшения, премиальный алкоголь. Распродажа в магазине — максимальные скидки на элитные товары.",
             gift_text: "При заказе в подарок: парфюм и помада известных брендов",
             hero_btn: "Смотреть коллекцию",
+            featured_title: "Рекомендуемые модели",
+            featured_sub: "Эксклюзивные предложения",
             catalog_title: "Другие эксклюзивные предметы",
             catalog_sub: "Полная коллекция",
             feat1_title: "100% оригинал", feat1_desc: "Экспертиза и гарантия подлинности",
@@ -926,7 +1065,24 @@
             copyright: "© 2026 Элитный стиль — Премиум комиссионный бутик. Скидки 60–70% + подарок к заказу.",
             footer_brand: "Элитный стиль",
             footer_subtitle: "Элитные зарубежные бренды",
-            footer_country: "Беларусь, Минск"
+            footer_country: "Беларусь, Минск",
+            why_us_title: "Почему выбирают нас?",
+            why_us_1_title: "Большой выбор",
+            why_us_1_desc: "У нас большой выбор новых и восстановленных сумок, что дает вам бесконечные возможности и отличную возможность обмена.",
+            why_us_2_title: "Профессиональный уход",
+            why_us_2_desc: "У нас работают профессиональные специалисты по уходу за кожей, которые бесплатно проведут техническое обслуживание и чистку ваших сумок.",
+            why_us_3_title: "Членская программа",
+            why_us_3_desc: "Став нашим членом, вы получите членскую карту; ваши покупки будут конвертироваться в баллы, которые можно обменять на призы в конце года. Наши участники ежемесячно пользуются различными бесплатными пробными программами.",
+            team_title: "Наша команда",
+            team_member1_name: "Подстригич Димитрий Геннадьевич",
+            team_member1_pos: "Специалист по работе с клиентами",
+            team_member1_desc: "Многолетний опыт работы в продажах. Умею выявлять потребности клиентов, поддерживать долгосрочное сотрудничество и предоставлять максимально качественное обслуживание.",
+            team_member2_name: "Роганова Виолетта Юрьевна",
+            team_member2_pos: "Специалист по развитию рынка",
+            team_member2_desc: "Активный и целеустремлённый специалист, занимающийся поиском новых клиентов и освоением рынка. Обладаю высокой исполнительностью.",
+            team_member3_name: "Стефанович Ольга Леонидовна",
+            team_member3_pos: "Универсальный специалист по обслуживанию",
+            team_member3_desc: "Отлично знаю продукцию, умею эффективно общаться и координировать работу. Решаю все вопросы клиентов комплексно и сопровождаю сотрудничество на всех этапах.",
         },
         be: {
             nav_home: "Галоўная", nav_catalog: "Каталог", nav_about: "Пра нас", nav_contact: "Кантакты",
@@ -936,6 +1092,8 @@
             hero_desc: "Толькі арыгінал. Люксавыя сумкі, гадзіннікі, упрыгажэнні, прэміяльны алкаголь. Распродаж у краме — максімальныя зніжкі на элітныя тавары.",
             gift_text: "Пры замове падарунак: парфюм і памада вядомых брэндаў",
             hero_btn: "Глядзець калекцыю",
+            featured_title: "Рэкамендуемыя мадэлі",
+            featured_sub: "Эксклюзіўныя прапановы",
             catalog_title: "Іншыя эксклюзіўныя прадметы",
             catalog_sub: "Поўная калекцыя",
             feat1_title: "100% арыгінал", feat1_desc: "Экспертыза і гарантыя сапраўднасці",
@@ -958,7 +1116,24 @@
             copyright: "© 2026 Элітны стыль — Прэміум камісійны буцік. Зніжкі 60–70% + падарунак да заказу.",
             footer_brand: "Элітны стыль",
             footer_subtitle: "Элітныя замежныя брэнды",
-            footer_country: "Беларусь, Мінск"
+            footer_country: "Беларусь, Мінск",
+            why_us_title: "Чаму выбіраюць нас?",
+            why_us_1_title: "Вялікі выбар",
+            why_us_1_desc: "У нас вялікі выбар новых і адноўленых сумкаў, што дае вам бясконцыя магчымасці і выдатную магчымасць абмену.",
+            why_us_2_title: "Прафесійны догляд",
+            why_us_2_desc: "У нас працуюць прафесійныя спецыялісты па догляду за скурай, якія бясплатна правядуць тэхнічнае абслугоўванне і чыстку вашых сумкаў.",
+            why_us_3_title: "Членская праграма",
+            why_us_3_desc: "Стаўшы нашым членам, вы атрымаеце членскую карту; вашы пакупкі будуць канвертавацца ў балы, якія можна абмяняць на прызы ў канцы года. Нашы ўдзельнікі штомесяц карыстаюцца рознымі бясплатнымі праграмамі.",
+            team_title: "Наша каманда",
+            team_member1_name: "Падстрыгіч Дзімітрый Генадзевіч",
+            team_member1_pos: "Спецыяліст па працы з кліентамі",
+            team_member1_desc: "Шматгадовы вопыт працы ў продажах. Умею выяўляць патрэбы кліентаў, падтрымліваць доўгатэрміновае супрацоўніцтва і забяспечваць максімальна якаснае абслугоўванне.",
+            team_member2_name: "Раганава Віялета Юр'еўна",
+            team_member2_pos: "Спецыяліст па развіцці рынку",
+            team_member2_desc: "Актыўны і мэтанакіраваны спецыяліст, які займаецца пошукам новых кліентаў і асваеннем рынку. Валодаю высокай выканаўчасцю.",
+            team_member3_name: "Сцяфановіч Вольга Леанідаўна",
+            team_member3_pos: "Універсальны спецыяліст па абслугоўванні",
+            team_member3_desc: "Выдатна ведаю прадукцыю, умею эфектыўна мець зносіны і каардынаваць працу. Вырашаю ўсе пытанні кліентаў комплексна і суправаджаю супрацоўніцтва на ўсіх этапах.",
         },
         en: {
             nav_home: "Home", nav_catalog: "Catalog", nav_about: "About", nav_contact: "Contacts",
@@ -968,6 +1143,8 @@
             hero_desc: "100% authentic. Luxury bags, watches, jewelry, premium vodka & wine. Enjoy huge discounts on all elite items.",
             gift_text: "Free gift with order: perfume & lipstick from renowned brands",
             hero_btn: "View collection",
+            featured_title: "Recommended models",
+            featured_sub: "Exclusive offers",
             catalog_title: "Other exclusive pieces",
             catalog_sub: "Full collection",
             feat1_title: "100% authentic", feat1_desc: "Expert verification & authenticity guarantee",
@@ -990,7 +1167,24 @@
             copyright: "© 2026 Elite Style — Luxury consignment boutique. 60–70% off + free gift.",
             footer_brand: "Elite Style",
             footer_subtitle: "Elite International Brands",
-            footer_country: "Belarus, Minsk"
+            footer_country: "Belarus, Minsk",
+            why_us_title: "Why choose us?",
+            why_us_1_title: "Wide selection",
+            why_us_1_desc: "We have a large selection of new and refurbished bags, giving you endless possibilities and great exchange opportunities.",
+            why_us_2_title: "Professional care",
+            why_us_2_desc: "Our professional leather care specialists provide free maintenance and cleaning for your bags.",
+            why_us_3_title: "Membership program",
+            why_us_3_desc: "Become a member and get a loyalty card; your purchases earn points that can be redeemed for prizes at the end of the year. Our members enjoy various free trial programs every month.",
+            team_title: "Our team",
+            team_member1_name: "Dimitry Podstrigich",
+            team_member1_pos: "Client Relations Specialist",
+            team_member1_desc: "Extensive sales experience. I identify client needs, maintain long-term partnerships, and provide the highest quality service.",
+            team_member2_name: "Violetta Roganova",
+            team_member2_pos: "Market Development Specialist",
+            team_member2_desc: "An active and goal-oriented professional focused on finding new clients and expanding market reach. Highly efficient and dedicated.",
+            team_member3_name: "Olga Stefanovich",
+            team_member3_pos: "Customer Service Specialist",
+            team_member3_desc: "Deep product knowledge, effective communication and coordination. I handle all client issues comprehensively and support cooperation at every stage.",
         },
         zh: {
             nav_home: "首页", nav_catalog: "精品目录", nav_about: "品牌故事", nav_contact: "联系我们",
@@ -1000,6 +1194,8 @@
             hero_desc: "100%正品保证。奢华包袋、腕表、珠宝、高端伏特加及名酒。店铺促销，尊享最大优惠。",
             gift_text: "下单即赠：知名品牌香水 + 口红",
             hero_btn: "探索系列",
+            featured_title: "推荐款",
+            featured_sub: "独家精选",
             catalog_title: "其他精选单品",
             catalog_sub: "完整系列",
             feat1_title: "100% 正品", feat1_desc: "权威鉴定，正品保障",
@@ -1022,117 +1218,83 @@
             copyright: "© 2026 精英风尚 — 奢华寄售精品店。60–70%折扣 + 下单赠礼。",
             footer_brand: "精英风尚",
             footer_subtitle: "海外精英品牌",
-            footer_country: "白俄罗斯，明斯克"
+            footer_country: "白俄罗斯，明斯克",
+            why_us_title: "为什么选择我们？",
+            why_us_1_title: "款式齐全",
+            why_us_1_desc: "我们提供大量新款及翻新包袋，为您提供无限选择和绝佳的置换机会。",
+            why_us_2_title: "专业护理",
+            why_us_2_desc: "我们拥有专业的皮革护理专家，为您的包袋提供免费保养和清洁服务。",
+            why_us_3_title: "会员计划",
+            why_us_3_desc: "成为会员即可获得积分卡；消费可累积积分，年末兑换奖品。会员每月还可享受多种免费试用项目。",
+            team_title: "我们的团队",
+            team_member1_name: "迪米特里·波德斯特里吉奇",
+            team_member1_pos: "客户关系专员",
+            team_member1_desc: "拥有多年销售经验，善于发掘客户需求，维护长期合作关系，提供最优质的服务。",
+            team_member2_name: "维奥莱塔·罗加诺娃",
+            team_member2_pos: "市场拓展专员",
+            team_member2_desc: "积极主动、目标明确的专业人士，负责新客户开发与市场拓展，执行力强。",
+            team_member3_name: "奥尔加·斯特凡诺维奇",
+            team_member3_pos: "全能客服专员",
+            team_member3_desc: "熟悉产品，善于高效沟通与协调，一站式解决客户所有问题，全程跟进合作。",
         }
     };
 
     let currentLang = 'ru';
 
-    // -------- CAROUSEL --------
-    const carouselSlidesDiv = document.getElementById('carouselSlides');
-    const dotsDiv = document.getElementById('carouselDots');
-    const carouselContainer = document.getElementById('carouselContainer');
-    let currentIndex = 0;
-    let slideInterval;
-    const TOTAL_CAROUSEL = 10;
+    // -------- FEATURED GRID (1-10 excluding 2 and 7) --------
+    const featuredIds = [1,3,4,5,6,8,9,10];
+    const featuredGrid = document.getElementById('featuredGrid');
 
-    function buildCarousel() {
-        carouselSlidesDiv.innerHTML = '';
-        dotsDiv.innerHTML = '';
-        for (let i = 1; i <= TOTAL_CAROUSEL; i++) {
-            const slideDiv = document.createElement('div');
-            slideDiv.className = 'carousel-slide';
+    function renderFeatured() {
+        if (!featuredGrid) return;
+        featuredGrid.innerHTML = '';
+        featuredIds.forEach(id => {
+            const card = document.createElement('div');
+            card.className = 'featured-card';
             const img = document.createElement('img');
-            img.src = `images/lvtu/${i}.png`;
-            img.alt = `Luxury item ${i}`;
+            img.className = 'featured-img';
+            img.src = `images/lvtu/${id}.png`;
+            img.alt = `Luxury item ${id}`;
+            img.loading = 'lazy';
             img.onerror = function() {
-                this.src = 'data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22800%22 height%3D%22450%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%231a1816%22%2F%3E%3C%2Fsvg%3E';
+                this.src = 'data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22500%22 height%3D%22500%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%23f4ede5%22%2F%3E%3C%2Fsvg%3E';
             };
-            slideDiv.appendChild(img);
-            carouselSlidesDiv.appendChild(slideDiv);
-
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            dot.addEventListener('click', () => goToSlide(i - 1));
-            dotsDiv.appendChild(dot);
-        }
-        updateDots();
-    }
-
-    function updateDots() {
-        document.querySelectorAll('.dot').forEach((dot, idx) => {
-            dot.classList.toggle('active', idx === currentIndex);
+            const overlay = document.createElement('div');
+            overlay.className = 'featured-overlay';
+            overlay.innerHTML = '<span class="featured-overlay-text"><i class="fas fa-phone-alt"></i><span data-key="overlay_contact">Узнать цену</span></span>';
+            card.appendChild(img);
+            card.appendChild(overlay);
+            card.addEventListener('click', openModal);
+            featuredGrid.appendChild(card);
         });
     }
 
-    function goToSlide(index) {
-        currentIndex = (index + TOTAL_CAROUSEL) % TOTAL_CAROUSEL;
-        carouselSlidesDiv.style.transform = `translateX(-${currentIndex * 100}%)`;
-        updateDots();
-    }
+    // -------- PRODUCT GRID (11-62 excluding 15,30,38,57) --------
+    const excludedProductIds = [15,30,38,57];
+    const productGrid = document.getElementById('remainingGrid');
 
-    function nextSlide() { goToSlide(currentIndex + 1); }
-    function prevSlide() { goToSlide(currentIndex - 1); }
-
-    function resetAutoSlide() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 3500);
-    }
-
-    // Pause on hover
-    carouselContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-    carouselContainer.addEventListener('mouseleave', resetAutoSlide);
-
-    // Touch/swipe support
-    let touchStartX = 0;
-    carouselContainer.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].clientX;
-        clearInterval(slideInterval);
-    }, { passive: true });
-    carouselContainer.addEventListener('touchend', e => {
-        const delta = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(delta) > 40) {
-            delta > 0 ? nextSlide() : prevSlide();
-        }
-        resetAutoSlide();
-    }, { passive: true });
-
-    // Recalculate on resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => goToSlide(currentIndex), 100);
-    });
-
-    document.getElementById('carouselPrev').addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
-    document.getElementById('carouselNext').addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
-
-    // -------- PRODUCT GRID (11–62) --------
-    function renderRemainingGrid() {
-        const grid = document.getElementById('remainingGrid');
-        if (!grid) return;
-        grid.innerHTML = '';
+    function renderProductGrid() {
+        if (!productGrid) return;
+        productGrid.innerHTML = '';
         for (let i = 11; i <= 62; i++) {
+            if (excludedProductIds.includes(i)) continue;
             const card = document.createElement('div');
             card.className = 'product-card';
-
             const img = document.createElement('img');
             img.className = 'product-img';
             img.src = `images/lvtu/${i}.png`;
             img.alt = `Luxury item ${i}`;
             img.loading = 'lazy';
             img.onerror = function() {
-                this.src = 'data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22400%22 height%3D%22340%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%23f4ede5%22%2F%3E%3C%2Fsvg%3E';
+                this.src = 'data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22500%22 height%3D%22500%22%3E%3Crect width%3D%22100%25%22 height%3D%22100%25%22 fill%3D%22%23f4ede5%22%2F%3E%3C%2Fsvg%3E';
             };
-
             const overlay = document.createElement('div');
             overlay.className = 'product-overlay';
             overlay.innerHTML = '<span class="product-overlay-text"><i class="fas fa-phone-alt"></i><span data-key="overlay_contact">Узнать цену</span></span>';
-
             card.appendChild(img);
             card.appendChild(overlay);
             card.addEventListener('click', openModal);
-            grid.appendChild(card);
+            productGrid.appendChild(card);
         }
     }
 
@@ -1170,7 +1332,6 @@
         menuToggle.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
     });
 
-    // Close mobile nav on link click
     navLinks.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
             navLinks.classList.remove('open');
@@ -1195,7 +1356,7 @@
             btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
         });
 
-        document.querySelectorAll('#remainingGrid [data-key="overlay_contact"]').forEach(el => {
+        document.querySelectorAll('#featuredGrid [data-key="overlay_contact"], #remainingGrid [data-key="overlay_contact"]').forEach(el => {
             el.textContent = t.overlay_contact;
         });
     }
@@ -1222,10 +1383,9 @@
     });
 
     // -------- INIT --------
-    buildCarousel();
-    renderRemainingGrid();
+    renderFeatured();
+    renderProductGrid();
     updatePageLanguage();
-    resetAutoSlide();
 </script>
 </body>
 </html>
